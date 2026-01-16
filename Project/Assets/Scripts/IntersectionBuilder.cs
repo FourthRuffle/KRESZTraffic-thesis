@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class IntersectionRoadDirection
@@ -21,9 +20,7 @@ public class IntersectionRoadDirection
 public class IntersectionBuilder : MonoBehaviour
 {
     public List<Intersection> intersections;
-
     public GameObject road;
-
     Intersection current;
 
     List<IntersectionRoadDirection> roadDirection = new List<IntersectionRoadDirection>()
@@ -34,10 +31,17 @@ public class IntersectionBuilder : MonoBehaviour
         new IntersectionRoadDirection(IntersectionDirection.RIGHT, IntersectionDirection.DOWN, IntersectionDirection.UP, new Vector3(4, 0, 0), new Vector3(0, -90, 0)),
     };
 
-    void Awake()
+   
+    void Start()
     {
-        BuildIntersection(intersections[Random.Range(0, intersections.Count)].identifier);
-        GenerateVehicles();
+        if (intersections.Count > 0)
+        {
+            BuildIntersection(intersections[Random.Range(0, intersections.Count)].identifier);
+            GenerateVehicles();
+
+            // Now that cars exist, calculate the priority order
+            IntersectionSolver.Instance.SetupLevel();
+        }
     }
 
     void BuildIntersection(string id)
@@ -46,9 +50,9 @@ public class IntersectionBuilder : MonoBehaviour
         if (current == null) { return; }
 
         Instantiate(current.baseModel, transform);
-        foreach (IntersectionRoad direction in current.roads)
+        foreach (IntersectionRoad roadData in current.roads)
         {
-            IntersectionRoadDirection placeAt = roadDirection.Find(x => x.direction == direction.direction);
+            IntersectionRoadDirection placeAt = roadDirection.Find(x => x.direction == roadData.direction);
             GameObject newRoad = Instantiate(road, placeAt.pos, Quaternion.Euler(placeAt.rot), transform);
             newRoad.GetComponent<Road>().AssignDirection(current, placeAt);
         }
@@ -57,7 +61,6 @@ public class IntersectionBuilder : MonoBehaviour
     void GenerateVehicles()
     {
         int toGenerate = Random.Range(2, current.roads.Count + 1);
-
         List<Road> roads = FindObjectsOfType<Road>().ToList();
         for (int i = 0; i < toGenerate; i++)
         {

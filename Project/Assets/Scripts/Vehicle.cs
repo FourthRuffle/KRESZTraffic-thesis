@@ -26,33 +26,35 @@ public class Vehicle : MonoBehaviour
     {
         IntersectionDirection.UP, IntersectionDirection.DOWN, IntersectionDirection.LEFT, IntersectionDirection.RIGHT
     };
+
     void Start()
     {
         dollyCart = GetComponent<CinemachineDollyCart>();
-        // Ensure the cart doesn't move immediately
         dollyCart.m_Speed = 0;
     }
+
     void Update()
     {
         if (dollyCart != null && dollyCart.m_Speed > 0)
         {
-            // Check if we have reached or exceeded the path length
             if (dollyCart.m_Position >= dollyCart.m_Path.PathLength)
             {
-                dollyCart.m_Speed = 0; // Stop moving
+                dollyCart.m_Speed = 0;
                 Despawn();
             }
         }
     }
+
     void Despawn()
     {
         Destroy(gameObject, 0.1f);
     }
+
     public void SetPath(CinemachinePathBase path)
     {
         if (dollyCart == null) dollyCart = GetComponent<CinemachineDollyCart>();
         dollyCart.m_Path = path;
-        dollyCart.m_Position = 0; // Start at the beginning of the road
+        dollyCart.m_Position = 0;
     }
 
     public void AssignDirection(Intersection _intersection, IntersectionRoadDirection _road)
@@ -62,7 +64,6 @@ public class Vehicle : MonoBehaviour
         EntryRoad = _road.direction;
         ChooseDestination();
     }
-
 
     void ChooseDestination()
     {
@@ -86,12 +87,21 @@ public class Vehicle : MonoBehaviour
     bool HasRightNeighbour()
     {
         List<Vehicle> vehicles = FindObjectsOfType<Vehicle>().ToList();
-        return vehicles.Find(x => x.EntryRoad == road.right);
+        return vehicles.Exists(x => x.EntryRoad == road.right);
     }
+
+    public void Drive()
+    {
+        if (dollyCart != null) dollyCart.m_Speed = 5f;
+    }
+
     void OnMouseDown()
     {
-        // Start the car! You can adjust the speed value here
-        dollyCart.m_Speed = 5f;
+        // Prevent clicking cars if the menu is already open
+        if (PauseMenu.Instance.Canvas.enabled) return;
+
+        // Ask the solver if this is the right move
+        IntersectionSolver.Instance.OnVehicleClicked(this);
     }
 
     void OnMouseOver()

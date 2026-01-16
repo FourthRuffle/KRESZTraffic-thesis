@@ -1,22 +1,24 @@
-using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public enum NodeType
 {
     START, END
 }
+
 public class Road : MonoBehaviour
 {
-    [Header("Cinemachine Paths")]
-    public CinemachinePath trackStraight;
-    public CinemachinePath trackLeft;
-    public CinemachinePath trackRight;
     public IntersectionRoadDirection direction;
     public Transform startNode;
     public Transform endNode;
     public GameObject sign;
+
+    [Header("Cinemachine Paths")]
+    public CinemachinePath trackStraight;
+    public CinemachinePath trackLeft;
+    public CinemachinePath trackRight;
 
     Intersection intersection;
     public List<GameObject> vehicles;
@@ -50,27 +52,16 @@ public class Road : MonoBehaviour
         GameObject prefab = vehicles[Random.Range(0, vehicles.Count)];
         GameObject newVehicle = Instantiate(prefab, startNode.position, startNode.rotation, transform);
 
-        Vehicle vehicleScript = newVehicle.GetComponent<Vehicle>();
-        vehicleScript.AssignDirection(intersection, direction);
+        Vehicle vScript = newVehicle.GetComponent<Vehicle>();
+        vScript.AssignDirection(intersection, direction);
 
-        // Get the Dolly Cart from the vehicle
-        var cart = newVehicle.GetComponent<Cinemachine.CinemachineDollyCart>();
-
-        // Give the cart the correct path based on the calculated turn
-        switch (vehicleScript.LocalDirection)
+        CinemachineDollyCart cart = newVehicle.GetComponent<CinemachineDollyCart>();
+        switch (vScript.LocalDirection)
         {
-            case LocalDirection.FORWARD:
-                cart.m_Path = trackStraight;
-                break;
-            case LocalDirection.LEFT:
-                cart.m_Path = trackLeft;
-                break;
-            case LocalDirection.RIGHT:
-                cart.m_Path = trackRight;
-                break;
+            case LocalDirection.FORWARD: cart.m_Path = trackStraight; break;
+            case LocalDirection.LEFT: cart.m_Path = trackLeft; break;
+            case LocalDirection.RIGHT: cart.m_Path = trackRight; break;
         }
-
-        cart.m_Position = 0; // Ensure it starts at the beginning of the path
-        cart.m_Speed = 0;    // Wait for the user to click
+        cart.m_Position = 0;
     }
 }
