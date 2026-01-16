@@ -8,8 +8,8 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public Canvas Canvas;
-    public static PauseMenu Instance; // Allows other scripts to find this one
-    public TextMeshProUGUI statusMessage; // Drag your result text here
+    public static PauseMenu Instance; 
+    public TextMeshProUGUI statusMessage; 
     void Awake() { Instance = this; }
     void Start()
     {
@@ -28,7 +28,7 @@ public class PauseMenu : MonoBehaviour
         if (Canvas.enabled) statusMessage.text = "PAUSED";
     }
 
-    // Called by the Solver when the game ends
+    
     public void OpenWithResult(string message, Color color)
     {
         Canvas.enabled = true;

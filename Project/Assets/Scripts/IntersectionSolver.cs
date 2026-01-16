@@ -24,7 +24,6 @@ public class IntersectionSolver : MonoBehaviour
         UpdateLegalMoves();
     }
 
-    // This function identifies ALL cars that share the current highest priority
     void UpdateLegalMoves()
     {
         if (remainingVehicles.Count == 0)
@@ -33,17 +32,14 @@ public class IntersectionSolver : MonoBehaviour
             return;
         }
 
-        // 1. Sort the remaining cars by the same rules as before
         var sorted = remainingVehicles
             .OrderBy(v => v.Rank)
             .ThenBy(v => directionOrder.FindIndex(d => d == v.LocalDirection))
             .ThenBy(v => !v.RightHandFirst)
             .ToList();
 
-        // 2. The first car in the sorted list defines the current "Best Priority"
         Vehicle bestVehicle = sorted[0];
 
-        // 3. Find all other cars that have the EXACT same priority stats
         currentLegalMoves = remainingVehicles.Where(v =>
             v.Rank == bestVehicle.Rank &&
             v.LocalDirection == bestVehicle.LocalDirection &&
@@ -55,13 +51,11 @@ public class IntersectionSolver : MonoBehaviour
     {
         if (isGameOver) return;
 
-        // If the clicked car is in the "Legal" group, it's a correct move!
         if (currentLegalMoves.Contains(clickedVehicle))
         {
             clickedVehicle.Drive();
             remainingVehicles.Remove(clickedVehicle);
 
-            // Recalculate who can go next
             UpdateLegalMoves();
         }
         else

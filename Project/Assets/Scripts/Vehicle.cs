@@ -86,7 +86,6 @@ public class Vehicle : MonoBehaviour
 
     bool HasRightNeighbour()
     {
-        // Only look for vehicles that haven't started driving yet
         List<Vehicle> vehicles = FindObjectsOfType<Vehicle>().ToList();
         return vehicles.Exists(x => x.EntryRoad == road.right && x.GetComponent<Cinemachine.CinemachineDollyCart>().m_Speed == 0);
     }
@@ -98,10 +97,8 @@ public class Vehicle : MonoBehaviour
 
     void OnMouseDown()
     {
-        // Prevent clicking cars if the menu is already open
         if (PauseMenu.Instance.Canvas.enabled) return;
 
-        // Ask the solver if this is the right move
         IntersectionSolver.Instance.OnVehicleClicked(this);
     }
 
