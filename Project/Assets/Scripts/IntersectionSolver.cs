@@ -5,79 +5,75 @@ using UnityEngine;
 
 public class IntersectionSolver : MonoBehaviour
 {
-    // Singleton allows Vehicle and PauseMenu to find the Solver easily
     public static IntersectionSolver Instance;
 
-    private List<Vehicle> correctOrder = new List<Vehicle>();
-    private int playerStep = 0;
+    // We now track which cars are "Legal" to click right now
+    private List<Vehicle> currentLegalMoves = new List<Vehicle>();
+    private List<Vehicle> remainingVehicles = new List<Vehicle>();
     private bool isGameOver = false;
 
-    // Defines turn priority: Right turns first, then Straight, then Left turns
     List<LocalDirection> directionOrder = new List<LocalDirection>()
-    {
-        LocalDirection.RIGHT, LocalDirection.FORWARD, LocalDirection.LEFT
-    };
+    { LocalDirection.RIGHT, LocalDirection.FORWARD, LocalDirection.LEFT };
 
-    void Awake()
-    {
-        Instance = this;
-    }
+    void Awake() { Instance = this; }
 
-    // Called by IntersectionBuilder after all vehicles are spawned
     public void SetupLevel()
     {
-        List<Vehicle> vehicles = FindObjectsOfType<Vehicle>().ToList();
+        remainingVehicles = FindObjectsOfType<Vehicle>().ToList();
+        isGameOver = false;
+        UpdateLegalMoves();
+    }
 
-        // Sorting Logic: 
-        // 1. Road Rank (Priority vs Secondary)
-        // 2. Turn Rank (Right > Straight > Left)
-        // 3. Right-Hand Rule (Is there a car to your right?)
-        correctOrder = vehicles
-            .OrderBy(x => x.Rank)
-            .ThenBy(x => GetTurnRank(x))
-            .ThenBy(x => !x.RightHandFirst)
+    // This function identifies ALL cars that share the current highest priority
+    void UpdateLegalMoves()
+    {
+        if (remainingVehicles.Count == 0)
+        {
+            StartCoroutine(ShowResult(true));
+            return;
+        }
+
+        // 1. Sort the remaining cars by the same rules as before
+        var sorted = remainingVehicles
+            .OrderBy(v => v.Rank)
+            .ThenBy(v => directionOrder.FindIndex(d => d == v.LocalDirection))
+            .ThenBy(v => !v.RightHandFirst)
             .ToList();
 
-        playerStep = 0;
-        isGameOver = false;
-        Debug.Log("Level Setup: Answer Key generated with " + correctOrder.Count + " vehicles.");
+        // 2. The first car in the sorted list defines the current "Best Priority"
+        Vehicle bestVehicle = sorted[0];
+
+        // 3. Find all other cars that have the EXACT same priority stats
+        currentLegalMoves = remainingVehicles.Where(v =>
+            v.Rank == bestVehicle.Rank &&
+            v.LocalDirection == bestVehicle.LocalDirection &&
+            v.RightHandFirst == bestVehicle.RightHandFirst
+        ).ToList();
     }
 
-    // Helper to find index of direction in the priority list
-    int GetTurnRank(Vehicle vehicle)
-    {
-        return directionOrder.FindIndex(x => x == vehicle.LocalDirection);
-    }
-
-    // Called by Vehicle.cs when the player clicks a car
     public void OnVehicleClicked(Vehicle clickedVehicle)
     {
         if (isGameOver) return;
 
-        // Check if the clicked vehicle is the correct one in the sequence
-        if (clickedVehicle == correctOrder[playerStep])
+        // If the clicked car is in the "Legal" group, it's a correct move!
+        if (currentLegalMoves.Contains(clickedVehicle))
         {
-            clickedVehicle.Drive(); // Signal the car to move
-            playerStep++;
+            clickedVehicle.Drive();
+            remainingVehicles.Remove(clickedVehicle);
 
-            // If all cars are clicked correctly
-            if (playerStep >= correctOrder.Count)
-            {
-                StartCoroutine(DelayedResult(true));
-            }
+            // Recalculate who can go next
+            UpdateLegalMoves();
         }
         else
         {
-            // Wrong choice: End game and show failure
             isGameOver = true;
-            PauseMenu.Instance.OpenWithResult("FAIL!\nWrong Priority.", Color.red);
+            PauseMenu.Instance.OpenWithResult("FAIL!\nIt's not that car's turn.", Color.red);
         }
     }
 
-    // Delay showing success so the player can watch the last car drive off
-    IEnumerator DelayedResult(bool success)
+    IEnumerator ShowResult(bool success)
     {
         yield return new WaitForSeconds(1.5f);
-        PauseMenu.Instance.OpenWithResult("SUCCESS!\nCorrect Order.", Color.green);
+        PauseMenu.Instance.OpenWithResult("SUCCESS!\nIntersection Cleared.", Color.green);
     }
 }

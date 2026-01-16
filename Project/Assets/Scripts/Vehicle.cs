@@ -86,8 +86,9 @@ public class Vehicle : MonoBehaviour
 
     bool HasRightNeighbour()
     {
+        // Only look for vehicles that haven't started driving yet
         List<Vehicle> vehicles = FindObjectsOfType<Vehicle>().ToList();
-        return vehicles.Exists(x => x.EntryRoad == road.right);
+        return vehicles.Exists(x => x.EntryRoad == road.right && x.GetComponent<Cinemachine.CinemachineDollyCart>().m_Speed == 0);
     }
 
     public void Drive()
