@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2be21c48eb3c5bb4c8df5fdce38cee83, type: 3}
+  m_Name: 4-Way Ranked (Vertical)
+  m_EditorClassIdentifier: 
+  identifier: 4way_ranked_vertical
+  roads:
+  - direction: 0
+    rank: 1
+  - direction: 1
+    rank: 1
+  - direction: 2
+    rank: 0
+  - direction: 3
+    rank: 0
+  baseModel: {fileID: 2114136040980320613, guid: b05204d78d78f304791683e44eb06bb1, type: 3}
