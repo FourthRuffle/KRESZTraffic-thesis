@@ -39,7 +39,6 @@ public class IntersectionBuilder : MonoBehaviour
             BuildIntersection(intersections[Random.Range(0, intersections.Count)].identifier);
             GenerateVehicles();
 
-            // Now that cars exist, calculate the priority order
             IntersectionSolver.Instance.SetupLevel();
         }
     }
