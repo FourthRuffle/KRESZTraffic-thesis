@@ -51,10 +51,10 @@ public class Road : MonoBehaviour
     {
         GameObject prefab = vehicles[Random.Range(0, vehicles.Count)];
         GameObject newVehicle = Instantiate(prefab, startNode.position, startNode.rotation, transform);
-
+        
         Vehicle vScript = newVehicle.GetComponent<Vehicle>();
         vScript.AssignDirection(intersection, direction);
-
+        newVehicle.name = $"Car_{direction.direction}_{vScript.LocalDirection}";
         CinemachineDollyCart cart = newVehicle.GetComponent<CinemachineDollyCart>();
         switch (vScript.LocalDirection)
         {

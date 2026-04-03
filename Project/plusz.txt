@@ -1,6 +1,13 @@
-index
+Feedback
+
 nyilak - folyamatosan látszik, irányok
-új táblák
+
+új táblák - pályák
+
 pontrendszer
+
 nehézségi szintek
 
+kamerakövetés
+
+index

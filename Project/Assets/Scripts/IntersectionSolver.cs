@@ -7,7 +7,6 @@ public class IntersectionSolver : MonoBehaviour
 {
     public static IntersectionSolver Instance;
 
-    // We now track which cars are "Legal" to click right now
     private List<Vehicle> currentLegalMoves = new List<Vehicle>();
     private List<Vehicle> remainingVehicles = new List<Vehicle>();
     private bool isGameOver = false;
@@ -21,6 +20,14 @@ public class IntersectionSolver : MonoBehaviour
     {
         remainingVehicles = FindObjectsOfType<Vehicle>().ToList();
         isGameOver = false;
+
+        // --- INITIAL REPORTING ---
+        Debug.Log("<color=cyan><b>--- INITIAL TRAFFIC SITUATION ---</b></color>");
+        foreach (Vehicle v in remainingVehicles)
+        {
+            Debug.Log($"Vehicle: {v.name} | From: {v.EntryRoad} | To: {v.ExitRoad} | Turn: {v.LocalDirection} | Rank: {v.Rank}");
+        }
+
         UpdateLegalMoves();
     }
 
@@ -28,10 +35,12 @@ public class IntersectionSolver : MonoBehaviour
     {
         if (remainingVehicles.Count == 0)
         {
+            Debug.Log("<color=green><b>ALL CARS CLEARED SUCCESSFULLY!</b></color>");
             StartCoroutine(ShowResult(true));
             return;
         }
 
+        // 1. Sort the remaining cars to find the priority
         var sorted = remainingVehicles
             .OrderBy(v => v.Rank)
             .ThenBy(v => directionOrder.FindIndex(d => d == v.LocalDirection))
@@ -40,11 +49,16 @@ public class IntersectionSolver : MonoBehaviour
 
         Vehicle bestVehicle = sorted[0];
 
+        // 2. Identify the "Legal Group"
         currentLegalMoves = remainingVehicles.Where(v =>
             v.Rank == bestVehicle.Rank &&
             v.LocalDirection == bestVehicle.LocalDirection &&
             v.RightHandFirst == bestVehicle.RightHandFirst
         ).ToList();
+
+        // --- GROUP REPORTING ---
+        string legalNames = string.Join(", ", currentLegalMoves.Select(v => v.name));
+        Debug.Log($"<color=yellow><b>NEXT MOVE:</b></color> Any of these: [{legalNames}]");
     }
 
     public void OnVehicleClicked(Vehicle clickedVehicle)
@@ -53,15 +67,24 @@ public class IntersectionSolver : MonoBehaviour
 
         if (currentLegalMoves.Contains(clickedVehicle))
         {
+            Debug.Log($"<color=green>CORRECT:</color> {clickedVehicle.name} is moving.");
+
             clickedVehicle.Drive();
             remainingVehicles.Remove(clickedVehicle);
+
+            // Log the remaining order after the move
+            string remaining = remainingVehicles.Count > 0
+                ? string.Join(" -> ", remainingVehicles.Select(v => v.name))
+                : "None";
+            Debug.Log($"Remaining Vehicles: {remaining}");
 
             UpdateLegalMoves();
         }
         else
         {
             isGameOver = true;
-            PauseMenu.Instance.OpenWithResult("FAIL!\nIt's not that car's turn.", Color.red);
+            Debug.LogError($"<color=red>WRONG MOVE!</color> {clickedVehicle.name} tried to go out of turn.");
+            PauseMenu.Instance.OpenWithResult("FAIL!\nIllegal Priority Move.", Color.red);
         }
     }
 
