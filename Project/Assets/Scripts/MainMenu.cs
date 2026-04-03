@@ -5,9 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void PlayGame()
+    public void PlayGame(bool isNextStage)
     {
-        SceneManager.LoadSceneAsync(1);
+        // If the button is NOT marked as 'Next Stage', reset the score to 0
+        if (!isNextStage)
+        {
+            IntersectionSolver.ResetScore();
+        }
+
+        // Load your game scene (Replace "GameScene" with your actual scene name)
+        SceneManager.LoadScene("one");
     }
     public void ExitGame()
     {
