@@ -5,23 +5,57 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+
+    public void StartTestMode()
+    {
+        IntersectionSolver.ResetScore();
+        IntersectionSolver.IsTestMode = true;
+        IntersectionSolver.CurrentTestLevelIndex = 0;
+
+        IntersectionSolver.GenerateTestSequence();
+
+        string firstScene = IntersectionSolver.TestSequence[0];
+        SceneManager.LoadScene(firstScene);
+    }
+
+
     public void PlayGame(bool isNextStage)
     {
-        // If the button is NOT marked as 'Next Stage', reset the score to 0
-        if (!isNextStage)
+        if (IntersectionSolver.IsTestMode)
         {
-            IntersectionSolver.ResetScore();
+            LoadNextTestLevel(isNextStage);
+        }
+        else
+        {
+
+            if (!isNextStage) IntersectionSolver.ResetScore();
+            SceneManager.LoadScene("Freeplay");
+        }
+    }
+
+    private void LoadNextTestLevel(bool isNextStage)
+    {
+        if (isNextStage)
+        {
+            IntersectionSolver.CurrentTestLevelIndex++;
         }
 
-        // Load your game scene (Replace "GameScene" with your actual scene name)
-        SceneManager.LoadScene("one");
+        if (IntersectionSolver.CurrentTestLevelIndex < IntersectionSolver.TestSequence.Count)
+        {
+            string sceneToLoad = IntersectionSolver.TestSequence[IntersectionSolver.CurrentTestLevelIndex];
+            SceneManager.LoadScene(sceneToLoad);
+        }
     }
+
     public void ExitGame()
     {
         Application.Quit();
     }
+
     public void BackToMenu()
     {
-        SceneManager.LoadSceneAsync(0);
+        IntersectionSolver.IsTestMode = false;
+        IntersectionSolver.ResetScore();
+        SceneManager.LoadScene(0);
     }
 }

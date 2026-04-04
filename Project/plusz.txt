@@ -1,13 +1,15 @@
-Feedback
+Feedback - 1. kész
 
-nyilak - folyamatosan látszik, irányok
+nyilak - folyamatosan látszik, irányok - modellezés
 
-új táblák - pályák
+új táblák - pályák - modellezés
 
-pontrendszer
+pontrendszer 2. - kód
 
-nehézségi szintek
+nehézségi szintek 3. - kód félkész
 
-kamerakövetés
+kamerakövetés 4. - 
 
-index
+Teszt! - kód kész
+
+index - modellezés
