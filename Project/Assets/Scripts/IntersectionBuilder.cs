@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement; // Szükséges a scene nevének lekéréséhez
 
 public class IntersectionRoadDirection
 {
@@ -31,13 +32,41 @@ public class IntersectionBuilder : MonoBehaviour
         new IntersectionRoadDirection(IntersectionDirection.RIGHT, IntersectionDirection.DOWN, IntersectionDirection.UP, new Vector3(4, 0, 0), new Vector3(0, -90, 0)),
     };
 
-   
     void Start()
     {
         if (intersections.Count > 0)
         {
-            BuildIntersection(intersections[Random.Range(0, intersections.Count)].identifier);
-            GenerateVehicles();
+            string difficulty = SceneManager.GetActiveScene().name;
+            List<Intersection> filteredIntersections = new List<Intersection>();
+
+            
+            if (difficulty == "Easy")
+            {
+                filteredIntersections = intersections.FindAll(x =>
+                    x.roads.Count == 3 &&
+                    !x.roads.Exists(r => r.rank != 0));
+            }
+            else if (difficulty == "Medium")
+            {
+                filteredIntersections = intersections.FindAll(x =>
+                    (x.roads.Count == 3 || x.roads.Count == 4) &&
+                    !x.roads.Exists(r => r.rank != 0));
+            }
+            else if (difficulty == "Hard")
+            {
+                filteredIntersections = intersections.FindAll(x =>
+                    x.roads.Count == 4 &&
+                    x.roads.Exists(r => r.rank != 0));
+            }
+            else 
+            {
+                filteredIntersections = intersections;
+            }
+
+            if (filteredIntersections.Count == 0) filteredIntersections = intersections;
+
+            BuildIntersection(filteredIntersections[Random.Range(0, filteredIntersections.Count)].identifier);
+            GenerateVehicles(difficulty);
 
             IntersectionSolver.Instance.SetupLevel();
         }
@@ -57,12 +86,35 @@ public class IntersectionBuilder : MonoBehaviour
         }
     }
 
-    void GenerateVehicles()
+    void GenerateVehicles(string difficulty)
     {
-        int toGenerate = Random.Range(2, current.roads.Count + 1);
+        int toGenerate = 2; // Alapértelmezett
+
+        // --- AUTÓSZÁM BEÁLLÍTÁSA ---
+        if (difficulty == "Easy")
+        {
+            toGenerate = Random.Range(1, 3); // 1 vagy 2 autó
+        }
+        else if (difficulty == "Medium")
+        {
+            toGenerate = Random.Range(2, 4); // 2 vagy 3 autó
+        }
+        else if (difficulty == "Hard")
+        {
+            toGenerate = 4; // Mindig 4 autó
+        }
+        else
+        {
+            toGenerate = Random.Range(2, current.roads.Count + 1);
+        }
+
+        // Biztonsági ellenõrzés: ne generáljunk több autót, mint ahány út van
+        toGenerate = Mathf.Min(toGenerate, current.roads.Count);
+
         List<Road> roads = FindObjectsOfType<Road>().ToList();
         for (int i = 0; i < toGenerate; i++)
         {
+            if (roads.Count == 0) break;
             int randomRoad = Random.Range(0, roads.Count);
             roads[randomRoad].PlaceVehicle();
             roads.RemoveAt(randomRoad);

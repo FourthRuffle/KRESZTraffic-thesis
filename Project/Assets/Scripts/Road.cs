@@ -13,7 +13,10 @@ public class Road : MonoBehaviour
     public IntersectionRoadDirection direction;
     public Transform startNode;
     public Transform endNode;
-    public GameObject sign;
+
+    [Header("Signs")]
+    public GameObject sign;  // Ez lesz a Fõútvonal tábla (Rank > 0)
+    public GameObject sign2; // Ez lesz az Elsõbbségadás kötelezõ tábla (Rank == 0)
 
     [Header("Cinemachine Paths")]
     public CinemachinePath trackStraight;
@@ -34,7 +37,25 @@ public class Road : MonoBehaviour
     {
         intersection = _intersection;
         direction = _direction;
-        if (!RoadEqualRanked()) { sign.SetActive(CheckRoadRank() == 0); }
+
+
+        if (sign != null) sign.SetActive(false);
+        if (sign2 != null) sign2.SetActive(false);
+
+        int myRank = CheckRoadRank();
+        bool isEqual = RoadEqualRanked();
+
+        if (!isEqual)
+        {
+            if (myRank > 0)
+            {
+                if (sign != null) sign.SetActive(true); 
+            }
+            else
+            {
+                if (sign2 != null) sign2.SetActive(true);
+            }
+        }
     }
 
     int CheckRoadRank()
@@ -51,10 +72,11 @@ public class Road : MonoBehaviour
     {
         GameObject prefab = vehicles[Random.Range(0, vehicles.Count)];
         GameObject newVehicle = Instantiate(prefab, startNode.position, startNode.rotation, transform);
-        
+
         Vehicle vScript = newVehicle.GetComponent<Vehicle>();
         vScript.AssignDirection(intersection, direction);
         newVehicle.name = $"Car_{direction.direction}_{vScript.LocalDirection}";
+
         CinemachineDollyCart cart = newVehicle.GetComponent<CinemachineDollyCart>();
         switch (vScript.LocalDirection)
         {

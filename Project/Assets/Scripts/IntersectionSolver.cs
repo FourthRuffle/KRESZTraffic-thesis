@@ -14,7 +14,7 @@ public class IntersectionSolver : MonoBehaviour
     public static bool IsTestMode = false;
 
     public static List<string> TestSequence = new List<string>();
-    private static int totalTestStages = 50;
+    private static int totalTestStages = 30;
 
     private List<Vehicle> currentLegalMoves = new List<Vehicle>();
     private List<Vehicle> remainingVehicles = new List<Vehicle>();
@@ -36,9 +36,9 @@ public class IntersectionSolver : MonoBehaviour
     public static void GenerateTestSequence()
     {
         TestSequence.Clear();
-        for (int i = 0; i < 15; i++) TestSequence.Add("Easy");
-        for (int i = 0; i < 20; i++) TestSequence.Add("Medium");
-        for (int i = 0; i < 15; i++) TestSequence.Add("Hard");
+        for (int i = 0; i < 10; i++) TestSequence.Add("Easy");
+        for (int i = 0; i < 10; i++) TestSequence.Add("Medium");
+        for (int i = 0; i < 10; i++) TestSequence.Add("Hard");
 
         System.Random rng = new System.Random();
         TestSequence = TestSequence.OrderBy(x => rng.Next()).ToList();
@@ -148,7 +148,7 @@ public class IntersectionSolver : MonoBehaviour
             else
             {
                 string status = success ? "STAGE CLEAR!" : "STAGE FAILED!";
-                string progressMsg = $"{status}\nScore: {TestScore}/{CurrentTestLevelIndex + 1}";
+                string progressMsg = $"{status}\nQuestion: {CurrentTestLevelIndex + 1}/{totalTestStages}\nScore: {TestScore}";
 
                 PauseMenu.Instance.OpenWithResult(progressMsg, success ? Color.white : Color.red);
             }
