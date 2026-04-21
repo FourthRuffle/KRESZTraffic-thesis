@@ -1,38 +1,38 @@
 \select@language {magyar} \contentsline {chapter}{Bevezetés}{4}{chapter*.2}%
 \select@language {magyar} \contentsline {chapter}{\numberline {1}Technológiai áttekintés}{5}{chapter.1}%
-\select@language {magyar} \contentsline {section}{\numberline {1.1}Unreal Engine}{5}{section.1.1}%
+\select@language {magyar} \contentsline {section}{\numberline {1.1}Unreal Engine}{6}{section.1.1}%
 \select@language {magyar} \contentsline {section}{\numberline {1.2}Godot}{6}{section.1.2}%
-\select@language {magyar} \contentsline {section}{\numberline {1.3}Unity}{6}{section.1.3}%
-\select@language {magyar} \contentsline {subsection}{\numberline {1.3.1}Komponensek}{6}{subsection.1.3.1}%
-\select@language {magyar} \contentsline {section}{\numberline {1.4}Közlekedési szabályok}{7}{section.1.4}%
-\select@language {magyar} \contentsline {chapter}{\numberline {2}Rendszerterv}{8}{chapter.2}%
-\select@language {magyar} \contentsline {section}{\numberline {2.1}A rendszer célja}{8}{section.2.1}%
-\select@language {magyar} \contentsline {section}{\numberline {2.2}Telepítés}{8}{section.2.2}%
-\select@language {magyar} \contentsline {section}{\numberline {2.3}Fejlesztéshez használt eszközök}{8}{section.2.3}%
-\select@language {magyar} \contentsline {section}{\numberline {2.4}Funkcionális elvárások}{8}{section.2.4}%
-\select@language {magyar} \contentsline {chapter}{\numberline {3}Játékmenet}{10}{chapter.3}%
-\select@language {magyar} \contentsline {section}{\numberline {3.1}Szabad játék}{10}{section.3.1}%
-\select@language {magyar} \contentsline {section}{\numberline {3.2}Teszt játék}{10}{section.3.2}%
-\select@language {magyar} \contentsline {chapter}{\numberline {4}Saját szoftver}{11}{chapter.4}%
-\select@language {magyar} \contentsline {section}{\numberline {4.1}Fejlesztési idővonal}{11}{section.4.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {4.1.1}Tanulási időszak}{11}{subsection.4.1.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {4.1.2}Szoftver alapok}{11}{subsection.4.1.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {4.1.3}Unity alapok}{11}{subsection.4.1.3}%
-\select@language {magyar} \contentsline {subsection}{\numberline {4.1.4}Legfrissebb verzió}{12}{subsection.4.1.4}%
-\select@language {magyar} \contentsline {section}{\numberline {4.2}Menü}{12}{section.4.2}%
-\select@language {magyar} \contentsline {section}{\numberline {4.3}Játékprogram}{12}{section.4.3}%
-\select@language {magyar} \contentsline {subsection}{\numberline {4.3.1}Utak}{13}{subsection.4.3.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {4.3.2}Járművek}{13}{subsection.4.3.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {4.3.3}Kereszteződések}{14}{subsection.4.3.3}%
-\select@language {magyar} \contentsline {chapter}{\numberline {5}Fejlesztési lehetőségek}{15}{chapter.5}%
-\select@language {magyar} \contentsline {section}{\numberline {5.1}Textúrák és modellek}{15}{section.5.1}%
-\select@language {magyar} \contentsline {section}{\numberline {5.2}Új pályák és szituációk}{15}{section.5.2}%
-\select@language {magyar} \contentsline {section}{\numberline {5.3}Új szabályrendszerek}{16}{section.5.3}%
-\select@language {magyar} \contentsline {section}{\numberline {5.4}Szabálylista}{16}{section.5.4}%
-\select@language {magyar} \contentsline {section}{\numberline {5.5}Testreszabható feladatok}{17}{section.5.5}%
-\select@language {magyar} \contentsline {chapter}{\numberline {6}Tesztelés}{18}{chapter.6}%
-\select@language {magyar} \contentsline {section}{\numberline {6.1}Manuális}{18}{section.6.1}%
-\select@language {magyar} \contentsline {section}{\numberline {6.2}Egységteszt}{18}{section.6.2}%
-\select@language {magyar} \contentsline {chapter}{Összegzés}{19}{chapter*.3}%
-\select@language {magyar} \contentsline {chapter}{Irodalomjegyz\'ek}{20}{chapter*.4}%
-\select@language {magyar} \contentsline {chapter}{Ábrajegyzék}{21}{chapter*.5}%
+\select@language {magyar} \contentsline {section}{\numberline {1.3}Unity}{7}{section.1.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {1.3.1}Komponensek}{8}{subsection.1.3.1}%
+\select@language {magyar} \contentsline {section}{\numberline {1.4}Közlekedési szabályok}{9}{section.1.4}%
+\select@language {magyar} \contentsline {chapter}{\numberline {2}Rendszerterv}{10}{chapter.2}%
+\select@language {magyar} \contentsline {section}{\numberline {2.1}A rendszer célja}{10}{section.2.1}%
+\select@language {magyar} \contentsline {section}{\numberline {2.2}Telepítés}{10}{section.2.2}%
+\select@language {magyar} \contentsline {section}{\numberline {2.3}Fejlesztéshez használt eszközök}{10}{section.2.3}%
+\select@language {magyar} \contentsline {section}{\numberline {2.4}Funkcionális elvárások}{10}{section.2.4}%
+\select@language {magyar} \contentsline {chapter}{\numberline {3}Játékmenet}{12}{chapter.3}%
+\select@language {magyar} \contentsline {section}{\numberline {3.1}Szabad játék}{12}{section.3.1}%
+\select@language {magyar} \contentsline {section}{\numberline {3.2}Teszt játék}{13}{section.3.2}%
+\select@language {magyar} \contentsline {chapter}{\numberline {4}Saját szoftver}{15}{chapter.4}%
+\select@language {magyar} \contentsline {section}{\numberline {4.1}Fejlesztési idővonal}{15}{section.4.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.1.1}Tanulási időszak}{15}{subsection.4.1.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.1.2}Szoftver alapok}{15}{subsection.4.1.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.1.3}Unity alapok}{15}{subsection.4.1.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.1.4}Legfrissebb verzió}{16}{subsection.4.1.4}%
+\select@language {magyar} \contentsline {section}{\numberline {4.2}Menü}{16}{section.4.2}%
+\select@language {magyar} \contentsline {section}{\numberline {4.3}Játékprogram}{16}{section.4.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.3.1}Utak}{17}{subsection.4.3.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.3.2}Járművek}{18}{subsection.4.3.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.3.3}Kereszteződések}{19}{subsection.4.3.3}%
+\select@language {magyar} \contentsline {chapter}{\numberline {5}Fejlesztési lehetőségek}{20}{chapter.5}%
+\select@language {magyar} \contentsline {section}{\numberline {5.1}Textúrák és modellek}{20}{section.5.1}%
+\select@language {magyar} \contentsline {section}{\numberline {5.2}Új pályák és szituációk}{21}{section.5.2}%
+\select@language {magyar} \contentsline {section}{\numberline {5.3}Új szabályrendszerek}{21}{section.5.3}%
+\select@language {magyar} \contentsline {section}{\numberline {5.4}Szabálylista}{23}{section.5.4}%
+\select@language {magyar} \contentsline {section}{\numberline {5.5}Testreszabható feladatok}{23}{section.5.5}%
+\select@language {magyar} \contentsline {chapter}{\numberline {6}Tesztelés}{24}{chapter.6}%
+\select@language {magyar} \contentsline {section}{\numberline {6.1}Manuális}{24}{section.6.1}%
+\select@language {magyar} \contentsline {section}{\numberline {6.2}Egységteszt}{25}{section.6.2}%
+\select@language {magyar} \contentsline {chapter}{Összegzés}{26}{chapter*.3}%
+\select@language {magyar} \contentsline {chapter}{Irodalomjegyz\'ek}{27}{chapter*.4}%
+\select@language {magyar} \contentsline {chapter}{Ábrajegyzék}{28}{chapter*.5}%
