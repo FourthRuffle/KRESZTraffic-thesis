@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.16)  21 APR 2026 12:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.16)  21 APR 2026 12:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -935,31 +935,15 @@ Overfull \hbox (6.81438pt too wide) in paragraph at lines 455--456
 4x1559-[]1885809c9ebd .
  []
 
-
-
-pdfTeX warning: pdflatex.exe (file ./nyilatkozat/nyilatkozat.pdf): PDF inclusio
-n: found PDF version <1.7>, but at most version <1.5> allowed
 <nyilatkozat/nyilatkozat.pdf, id=445, 597.50829pt x 845.0471pt>
 File: nyilatkozat/nyilatkozat.pdf Graphic file (type pdf)
 <use nyilatkozat/nyilatkozat.pdf>
 Package pdftex.def Info: nyilatkozat/nyilatkozat.pdf  used on input line 463.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
-
-
-pdfTeX warning: pdflatex.exe (file ./nyilatkozat/nyilatkozat.pdf): PDF inclusio
-n: found PDF version <1.7>, but at most version <1.5> allowed
 File: nyilatkozat/nyilatkozat.pdf Graphic file (type pdf)
 <use nyilatkozat/nyilatkozat.pdf>
 Package pdftex.def Info: nyilatkozat/nyilatkozat.pdf  used on input line 463.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
-
-
-pdfTeX warning: pdflatex.exe (file ./nyilatkozat/nyilatkozat.pdf): PDF inclusio
-n: found PDF version <1.7>, but at most version <1.5> allowed
-
-
-pdfTeX warning: pdflatex.exe (file ./nyilatkozat/nyilatkozat.pdf): PDF inclusio
-n: found PDF version <1.7>, but at most version <1.5> allowed
 <nyilatkozat/nyilatkozat.pdf, id=448, page=1, 597.50829pt x 845.0471pt>
 File: nyilatkozat/nyilatkozat.pdf Graphic file (type pdf)
 <use nyilatkozat/nyilatkozat.pdf, page 1>
@@ -1016,10 +1000,10 @@ Here is how much of TeX's memory you used:
 /type1/public/lm/lmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lm
 r8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/texlive
 /2024/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on CUK9HS_2026.pdf (29 pages, 5211001 bytes).
+Output written on CUK9HS_2026.pdf (29 pages, 5210240 bytes).
 PDF statistics:
- 546 PDF objects out of 1000 (max. 8388607)
- 449 compressed objects within 5 object streams
+ 541 PDF objects out of 1000 (max. 8388607)
+ 445 compressed objects within 5 object streams
  110 named destinations out of 1000 (max. 500000)
  445 words of extra memory for PDF output out of 10000 (max. 10000000)
 
