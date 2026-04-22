@@ -33,17 +33,19 @@
 \select@language {magyar} \contentsline {section}{\numberline {5.3}Játékprogram}{24}{section.5.3}%
 \select@language {magyar} \contentsline {subsection}{\numberline {5.3.1}Utak}{24}{subsection.5.3.1}%
 \select@language {magyar} \contentsline {subsection}{\numberline {5.3.2}Járművek}{25}{subsection.5.3.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {5.3.3}Kereszteződések}{26}{subsection.5.3.3}%
-\select@language {magyar} \contentsline {chapter}{\numberline {6}Fejlesztési lehetőségek}{27}{chapter.6}%
-\select@language {magyar} \contentsline {section}{\numberline {6.1}Textúrák és modellek}{27}{section.6.1}%
-\select@language {magyar} \contentsline {section}{\numberline {6.2}Új pályák és szituációk}{28}{section.6.2}%
-\select@language {magyar} \contentsline {section}{\numberline {6.3}Új szabályrendszerek}{28}{section.6.3}%
-\select@language {magyar} \contentsline {section}{\numberline {6.4}Szabálylista}{30}{section.6.4}%
-\select@language {magyar} \contentsline {section}{\numberline {6.5}Testreszabható feladatok}{30}{section.6.5}%
-\select@language {magyar} \contentsline {chapter}{\numberline {7}Tesztelés}{31}{chapter.7}%
-\select@language {magyar} \contentsline {section}{\numberline {7.1}Manuális}{31}{section.7.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {7.1.1}Tesztesetek}{32}{subsection.7.1.1}%
-\select@language {magyar} \contentsline {section}{\numberline {7.2}Egységteszt}{32}{section.7.2}%
-\select@language {magyar} \contentsline {chapter}{Összegzés}{33}{chapter*.3}%
-\select@language {magyar} \contentsline {chapter}{Irodalomjegyz\'ek}{34}{chapter*.4}%
-\select@language {magyar} \contentsline {chapter}{Ábrajegyzék}{35}{chapter*.5}%
+\select@language {magyar} \contentsline {subsection}{\numberline {5.3.3}Kereszteződések}{27}{subsection.5.3.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {5.3.4}Sorrend kalkuláció}{28}{subsection.5.3.4}%
+\select@language {magyar} \contentsline {chapter}{\numberline {6}Fejlesztési lehetőségek}{29}{chapter.6}%
+\select@language {magyar} \contentsline {section}{\numberline {6.1}Textúrák és modellek}{29}{section.6.1}%
+\select@language {magyar} \contentsline {section}{\numberline {6.2}Új pályák és szituációk}{30}{section.6.2}%
+\select@language {magyar} \contentsline {section}{\numberline {6.3}Új szabályrendszerek}{30}{section.6.3}%
+\select@language {magyar} \contentsline {section}{\numberline {6.4}Szabálylista}{32}{section.6.4}%
+\select@language {magyar} \contentsline {section}{\numberline {6.5}Testreszabható feladatok}{32}{section.6.5}%
+\select@language {magyar} \contentsline {chapter}{\numberline {7}Tesztelés}{33}{chapter.7}%
+\select@language {magyar} \contentsline {section}{\numberline {7.1}Manuális}{33}{section.7.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {7.1.1}Tesztesetek}{34}{subsection.7.1.1}%
+\select@language {magyar} \contentsline {section}{\numberline {7.2}Egységteszt}{34}{section.7.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {7.2.1}Egységteszt tesztjegyzőkönyv.}{35}{subsection.7.2.1}%
+\select@language {magyar} \contentsline {chapter}{Összegzés}{36}{chapter*.3}%
+\select@language {magyar} \contentsline {chapter}{Irodalomjegyz\'ek}{37}{chapter*.4}%
+\select@language {magyar} \contentsline {chapter}{Ábrajegyzék}{38}{chapter*.5}%

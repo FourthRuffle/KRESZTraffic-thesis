@@ -132,6 +132,8 @@ Komponens csoportok is léteznek, ilyen például a \textit{NavMesh}. A \textit{
 
 Egy másik nagy csoport a \textit{Cinemachine} ami a projekt animációiért felel. Rengeteg különféle részből és komponensből áll, és a segítségével sokféle animáció hozható létre a környezeten belül. A projektben használt komponens a \textit{DollyCart}\cite{cinemachine} volt ami járművek megtett útjának a kezdőpontból a végpontba történő mozgás animációját biztosította. A járművekhett csatolt \textit{DollyCart} komponens képes az utakra rögzített animációs síneken végig haladni, így azt a látványt keltve, hogy a jármű áthaladt a kereszteződésen.
 
+A program összes UI eleme is komponensekből áll. A főmenüben és a játék köztes menüjében lévő gomb objektumok mind \textit{OnClick} komponenseket viselnek. Ezáltal ha a felhasználó rákattint a gombra, az a komponensen keresztül érvényesíti a hozzájuk csatolt funkciót, ami lehet a játék elindítása például a ,,Play'' gomb esetében, vagy a játékból való kilépés ami az \textit{Application.Close} metódust hajtja végre amennyiben input érkezik a kilépés gombtól. Ilyen komponenseket kaptak a járművek is. A járművek \textit{OnClick} komponense két funkcióért is felel. Az egyikben az inputot ellenőrzi a program, hogy a megfelelő, sorban következő járműre nyomott e rá a játékos. A második pedig, hogy amennyiben a jó járműre érkezik a kattintás, úgy annak a járműnek elindul az animációja, és elhagyja a kereszteződés, ha pedig rossz, nem soron következő járműre kattintunk akkor a program leállítja az adott feladatot és közli a hibás megoldást.
+
 \chapter{Inspirációs háttér}
 
 \section{Közlekedési szabályok}
@@ -340,6 +342,11 @@ A második megálló a \textit{Vehicle} osztály.
 		\caption{A járművek egyik modellje}
 	\end{figure}
 \end{itemize}
+Minden jármű folyamatosan vizsgálja a környezetét. Tudniuk kell, hogy milyen kereszteződésbe érkeztek meg éppen, és hogy abból a kereszteződésből merre szeretnének továbbhaladni. A kereszteződés lehet egyenrangú vagy főút.
+
+Ha egyenragú kereszteződésben vannak, akkor minden jármú azonos esélyekkel indul az elsőként áthaladónak járó megtiszteltetésért. Ebben az esetben a ,,Jobbkéz szabály'' érvényesül, ami azt jelenti, hogy minden jármű megvizsgálja a tőle jobbra lévő utat, amennyiben ott már áll egy másik jármű, ő alárendelt lesz és veszít az áthaladási sorrendben elfoglalt helyéből. Amennyiben a utolsó autótól jobbra is áll már valaki, tehát a kör bezárult, egy újabb vizsgálat lép érvénybe. Vannak olyan esetek, hogy két jármú olyan indulási és célponttal rendelkezik, hogy a szabályrendszer alapján elhaladhatnak egymás mellett ugyan azon időben. Ilyenkor a játékosnak kettő helyes megoldása lehet az adott szituációban és a játék mind a kettőt elfogadja megfeleő bemenetként.
+
+Főúttal rendelkező kereszteződékben a főúton érkező járműnek minden esetben elsőbbsége van a mellékútról érkezővel szemben. Amikor több autó is a főúton érkezik az dönt, hogy ki az aki kanyarodik és ki az aki egyenesen halad tovább. Ebben az esetben az egyenesen haladót engedi el előbb a szabályrendszer. Amennyiben mindkettő kanyarodik, az megy előbb aki kisebb ívben teszi azt tehát aki a tőle jobbra eső útra fog érkezni. Azonban itt előfordulhat, hogy a szabályrendszer szerint mindkét autó elhagyhatja a kereszteződést, hiszen nem keresztezik egymás útját és nem tartoznak a másiknak elsőbbségadással. Ez két esetben fordulhat elő. Az első, ha mind a két jármű egyenesen folytatja útját, ilyenkor egyszerűen elhaladnak egymás mellett. A másik opció, hogy mind a két autó a tőle jobbra eső utat választja céljául. Ebben az esetben a járművek találkoznak a kereszteződésben, de el tudnak fordulni egymás mellett. Ezekben az esetekben is, mind a szabályrendszer mind a program engedélyezi mindkét autó kiválasztását mint helyes következő lépés a feladatban.
 \newpage
 \subsection{Kereszteződések}
 A kereszteződéseknek két része van. Az \textit{IntersectionBuilder} osztály és az \textit{IntersectionSolver} osztály.
@@ -356,6 +363,16 @@ A kereszteződéseknek két része van. Az \textit{IntersectionBuilder} osztály
 		\caption{Egy éppen aktív kereszteződés}
 	\end{figure}
 \end{itemize}
+
+Négyféle kereszteződést kezel a program. Az első a 3 ágú egyenrangú kereszteződés. Ezeknek a kereszteződéseknek három darab becsatlakozó útja van, így három irányból érkezhetnek járművek. A kereszteződés minden becsatlakozó útjáról érkezhet és bármelyik út lehet célállomás is a járműveknek. Valamint minden jármű folyamatosan vizsgálja, hogy éppen van e jobboldali szomszédja akinek elsőbbséget kell adnia. A három ágú kereszteződéseknél előfordulhat, hogy a járműtől balra, vagy jobbra, esetleg szemben, nincs út. Ezt az esetet ilyenkor külön le kell kezelni, hogy az autók ne hajthassanak le au úttestről, valamint ne zavarodjanak össze, hogy melyikük van a jobb oldalon. Ugyan ezek vonatkoznak a három ágú, főúttal rendelkező kereszteződésre is. Annyi különbség viszont van, hogy az ilyen kereszteződések esetében a főúton haladó járműveknek elsőbbsége van az alárendelt útról érkezőkkel szemben.
+
+A négy ágú egyenrangú kereszteződések a legegyértelműbbek felépítés ügyileg. Négy irányból érkezhet autó, így minden esetben ellenőriznie kell az érkező járműveknek, hogy a kereszteződésbe érkezéskor lesz e jobboldali szomszédja. A négy ágú kereszteződésnek is létezik egy főúttal rendelkező verziója. Ebben a kereszteződésben szintén főút és elsőbbségadás kötelező táblák díszítik a csatlakozó utak szélét, hogy figyelmeztessék az érkező járműveket a kereszteződésben kialakult hierarchiára.
+\subsection{Sorrend kalkuláció}
+Az áthaladó járművek sorrendjét szintén a kereszteződések kezelik. A járművek a beérkezéskor leadják az adataikat, honnan jönnek és merre tartanak. A kereszteződés összeveti ezeket, a jelentésekben szereplő utakat a kereszteződés összes útjával és felállít egy sorrendet az autók között. Négy autós szituáció esetében sok minden befolyásolhatja a áthaladók sorrendjét.
+
+Elsősorban a ,,Jobbkéz szabály'' érvényesülését vizsgálja meg a rendszer, amennyiben nincsen főút és mellékút a kereszteződésben, tehát az utak egyenrangú kereszteződést alkotnak, úgy a szabály használatával könnyen megállapítható az áthaladási sorrend. Ha négy jármű esetében a szimpla ,,jobbkéz'' nem elegendő, a következő áthaladási sorrendet manipuláló vizsgáladó adat a járművektől beérkező haladási irány. Fontos, hogy az egyenesen továbbhaladó járműnek elsőbbsége van a kanyarodőval szemben, valamint a jobbra kanyarodó járműnek szintén elsőbbsége van a balra kanyarodóval szemben. Nem egyenrangú utak esetén a nem a jobboldali szomszéd a fontos hanem, hogy ki indul a védett útról. A sorrend az alapján dől el ebben a helyzetben, hogy melyik autókra vonatkozik az útjukhoz rögzített \textit{Elsőbbség adás kötelező} tábla. 
+
+Amennyiben a kereszteződésben két a sorrendben egymás után követező jármű a szabályrendszer alapján képes egyszerre elhagyni a kereszteződést, ők a sorrendben döntetlent kapnak. Ez azt jelenti, hogy bármelyikük indul előbb a feladat megoldása helyes lesz, hiszen akár egyszerre is elindulhatnak, ha a játékos elég gyors, hogy rövid idő alatt mindkettő autót elindítsa kattintással. Fontos fejlesztése volt ez a sorrend javító technika az kereszteződések megoldó algoritmusának mert nélküle könnyen zavaros, nem egyértelmű helyzetek jöhetnének létre.
 \chapter{Fejlesztési lehetőségek}
 Rengeteg potenciál van még a programban. Sok olyan ötletem volt és van ami még nem valósult meg, de elméletben már létezik.
 \section{Textúrák és modellek}
@@ -436,13 +453,13 @@ Később már végeztem nagyobb, teljes rendszer szintű manuális teszteket is,
 	\caption{Manuális tesztelés (Teszt játék, nem elég pont)}
 \end{figure}
 \subsection{Tesztesetek}
-Manuálisan teszteltem a kattinthatóságot és a kijelzőket. Több alkalommal is végigismételtem a feladatok megoldását, leellenőrizem, hogy a járművek minden kattintásra válaszoljanak, és a jelzők mindig megjelenjenek ha a kurzor a az adott járműn van.
+Manuálisan teszteltem a kattinthatóságot és a kijelzőket. Több alkalommal is végigismételtem a feladatok megoldását, leellenőrizem, hogy a járművek minden kattintásra válaszoljanak, és a jelzők mindig megjelenjenek ha a kurzor a az adott járműn van. Végig haladtam a program összes kattintható objektumán. Ezek a menük gombjai, a szituációkban szereplő járművek és a kurzor. Ezeket összesen 6 alkalommal teszteltem egy 12 lépéses tesztsorozattal.
 
-Hasonló tesztsorozaton esett át az animációs rendszer. Itt leginkább a be- és kilépőpontok helyét, Az animációk lépéssebességét valamint, hogy megfelelő sínre csatlakozik e a jármű \textit{DollyCart} komponense.
+Hasonló tesztsorozaton esett át az animációs rendszer. Itt leginkább a be- és kilépőpontok helyét, Az animációk lépéssebességét valamint, hogy megfelelő sínre csatlakozik e a jármű \textit{DollyCart} komponense. A tesztalany a cart kommponens és az útra illeszkedő sín komponensek. Ezeket összesen 3 alkalommal teszteltem egy 4 lépéses tesztsorozattal.
 
-A pontrendszer manuális tesztelése volt az amivel a legtöbb időt töltöttem. A szabad játék pontrendszere egyszerű ezért a pontnövekedés sikeres megoldás esetén, és stagnálás hibás megoldás esetén alaphelyzetek mellett elég volt pár szélsőséges példát tesztelni. A teszt játék módnál több tesztelési lehetőség van. Vizsgálni kellett, hogy az eredmény elbírálása nagyobb feladatszámnál is pontos e, valamit, hogy a sikeres és sikertelen tesztek minden esetben megfelelnek e a valóságnak.
+A pontrendszer manuális tesztelése volt az amivel a legtöbb időt töltöttem. A szabad játék pontrendszere egyszerű ezért a pontnövekedés sikeres megoldás esetén, és stagnálás hibás megoldás esetén alaphelyzetek mellett elég volt pár szélsőséges példát tesztelni. A teszt játék módnál több tesztelési lehetőség van. Vizsgálni kellett, hogy az eredmény elbírálása nagyobb feladatszámnál is pontos e, valamit, hogy a sikeres és sikertelen tesztek minden esetben megfelelnek e a valóságnak. Ezeket összesen 3 alkalommal teszteltem egy 6 lépéses tesztsorozattal.
 
-Tesztelni kellett a feedback rendszert. Ezt it több alkalommal, minden új adat implementálása után újra meg kellett ismételni, hogy minden aktív adat megfelelően megjelenik és érvényesül. A feedback rendszer nyújtotta az alapot a többi manuális teszt ellenőrzőpontjaként.
+Tesztelni kellett a feedback rendszert. Ezt it több alkalommal, minden új adat implementálása után újra meg kellett ismételni, hogy minden aktív adat megfelelően megjelenik és érvényesül. A feedback rendszer nyújtotta az alapot a többi manuális teszt ellenőrzőpontjaként. Ezt 12 alkalommal teszteltem egy 15 lépéses tesztsorozattal.
 
 \section{Egységteszt}
 Az egységtesztek olyan tesztek amiket a programunk adatokkal és változókkal foglalkozó részére írunk. Ezek a tesztek automatizáltak és azt tudjuk velük ellenőrizni, hogy a szoftver teljesíti e a feladatait.
@@ -450,8 +467,37 @@ Az egységtesztek olyan tesztek amiket a programunk adatokkal és változókkal 
 A Unity keretrendszerben ezt egy külön package telepítésével tehetjük meg, a \textit{Test Framework}-el. A kezeléséhez megnyitjuk a tesztelő felületet, azaz a \textit{Test Runnert}. Két opciónk van:
 \begin{itemize}
 	\item Play Mode: Itt olyan teszteket tudunk csinálni amelyek futási időben dolgoznak. Ilyenkor a keretrendszer elindítja a játékot és úgy futtatja a teszteket.
-	\item Edit Mode: Ebben a módban azok a kódrészek tesztelhetőek amelyek nem foglalkoznak a futásidő alatt aktív objektumokkal.
+	\item Edit Mode: Ebben a módban azok a kódrészek tesztelhetőek amelyek nem foglalkoznak a futásidő alatt aktív objektumokkal. Az egységteszteket ebben a módban csináltam.
 \end{itemize}
+\subsection{Egységteszt tesztjegyzőkönyv.}
+
+\begin{tabular}{|c|c|c|c|}
+	\hline
+	ID & Teszteset Megnevezése & Elvárt Eredmény & Státusz \\
+	\hline
+	T01 & Szintek száma & A TestSequence lista mérete pontosan 30. & Megfelelt\\
+	\hline
+	T02 & Easy eloszlás & Pontosan 10 db ``Easy'' jelölés a listában. & Megfelelt\\
+	\hline
+	T03 & Medium eloszlás & Pontosan 10 db ``Medium'' jelölés a listában. & Megfelelt\\
+	\hline
+	T04 & Hard eloszlás & Pontosan 10 db ``Hard'' jelölés a listában. & Megfelelt\\
+	\hline
+	T05 & Reset funkció & A ResetScore() hívása után minden számláló 0. & Megfelelt\\
+	\hline
+	T06 & Véletlenszerűség & Két generálás után a lista sorrendje nem azonos. & Megfelelt\\
+	\hline
+	T07 & Főútvonal prioritás & Rank 1-es autó mindig megelőzi a Rank 0-ást. & Megfelelt\\
+	\hline
+	T08 & Jobbkéz-szabály & Egyenlő rangnál a jobbkéz-szabály dönt. & Megfelelt\\
+	\hline
+	T09 & Kanyarodási szabály & Balra kanyarodó vár az egyenesen haladóra. & Megfelelt\\
+	\hline
+	T10 & Kattintás sorrend & Csak az az autó indul el, amelyikre kattintottak. & Megfelelt\\
+	\hline
+	T11 & Rossz sorrend hiba & Nem várt autó indításakor azonnali hibaüzenet. & Megfelelt\\
+	\hline
+\end{tabular}
 \chapter*{Összegzés}
 \addcontentsline{toc}{chapter}{Összegzés}
 A szakdolgozat végére úgy érzem, hogy az elképzelésem megvalósulni látszanak a kész programban. Eleinte úgy gondoltam, hogy sokkal egyszerűbb lesz, viszont ahogy haladtam előre a fejlesztésben, az újabb és újabb akadályok megmutatták mennyi belefektetett energiát is igényel egy ilyen program elkészítése. Rengeteg ötletem lenne még a program fejlesztésére, hogy milyen plusz funkciókat és elemeket tudnék beleépíteni a játékba. Ennek ellenére elégedett vagyok a program mostani állapotával is, hiszen mindig jó ha van hova fejlődni.

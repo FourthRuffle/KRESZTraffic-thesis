@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.16)  22 APR 2026 19:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.16)  22 APR 2026 22:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -614,7 +614,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 LaTeX Info: Redefining \cal on input line 577.
 LaTeX Info: Redefining \mit on input line 578.
 )
-<eszterhazy-logo-hu.pdf, id=200, 256.07971pt x 88.04292pt>
+<eszterhazy-logo-hu.pdf, id=205, 256.07971pt x 88.04292pt>
 File: eszterhazy-logo-hu.pdf Graphic file (type pdf)
 <use eszterhazy-logo-hu.pdf>
 Package pdftex.def Info: eszterhazy-logo-hu.pdf  used on input line 31.
@@ -644,7 +644,7 @@ thesis-ekf/eszterhazy-logo-hu.pdf>] (./CUK9HS_2026.toc
 
 [5]
 1. fejezet.
-<images/doom.png, id=282, 250.9375pt x 187.70125pt>
+<images/doom.png, id=287, 250.9375pt x 187.70125pt>
 File: images/doom.png Graphic file (type png)
 <use images/doom.png>
 Package pdftex.def Info: images/doom.png  used on input line 64.
@@ -654,7 +654,7 @@ Package pdftex.def Info: images/doom.png  used on input line 64.
 [6
 
  <./images/doom.png>]
-<images/unreal.jpg, id=296, 2854.665pt x 1564.84625pt>
+<images/unreal.jpg, id=301, 2854.665pt x 1564.84625pt>
 File: images/unreal.jpg Graphic file (type jpg)
 <use images/unreal.jpg>
 Package pdftex.def Info: images/unreal.jpg  used on input line 77.
@@ -662,7 +662,7 @@ Package pdftex.def Info: images/unreal.jpg  used on input line 77.
 
 
 [7 <./images/unreal.jpg>]
-<images/godot.png, id=308, 1445.4pt x 758.08218pt>
+<images/godot.png, id=313, 1445.4pt x 758.08218pt>
 File: images/godot.png Graphic file (type png)
 <use images/godot.png>
 Package pdftex.def Info: images/godot.png  used on input line 94.
@@ -670,7 +670,7 @@ Package pdftex.def Info: images/godot.png  used on input line 94.
 
 
 [8 <./images/godot.png (PNG copy)>]
-<images/unity.jpg, id=322, 3700.224pt x 2081.376pt>
+<images/unity.jpg, id=327, 3700.224pt x 2081.376pt>
 File: images/unity.jpg Graphic file (type jpg)
 <use images/unity.jpg>
 Package pdftex.def Info: images/unity.jpg  used on input line 112.
@@ -678,7 +678,7 @@ Package pdftex.def Info: images/unity.jpg  used on input line 112.
 
 
 [9 <./images/unity.jpg>]
-<images/unity_sajat.png, id=331, 1445.4pt x 767.11594pt>
+<images/unity_sajat.png, id=336, 1445.4pt x 767.11594pt>
 File: images/unity_sajat.png Graphic file (type png)
 <use images/unity_sajat.png>
 Package pdftex.def Info: images/unity_sajat.png  used on input line 120.
@@ -689,15 +689,15 @@ Package pdftex.def Info: images/unity_sajat.png  used on input line 120.
 
 [11]
 2. fejezet.
-<images/harompontos.jpg, id=350, 120.45pt x 85.0377pt>
+<images/harompontos.jpg, id=355, 120.45pt x 85.0377pt>
 File: images/harompontos.jpg Graphic file (type jpg)
 <use images/harompontos.jpg>
-Package pdftex.def Info: images/harompontos.jpg  used on input line 143.
+Package pdftex.def Info: images/harompontos.jpg  used on input line 145.
 (pdftex.def)             Requested size: 201.52017pt x 142.26378pt.
-<images/kresz.jpg, id=353, 489.9906pt x 271.0125pt>
+<images/kresz.jpg, id=358, 489.9906pt x 271.0125pt>
 File: images/kresz.jpg Graphic file (type jpg)
 <use images/kresz.jpg>
-Package pdftex.def Info: images/kresz.jpg  used on input line 152.
+Package pdftex.def Info: images/kresz.jpg  used on input line 154.
 (pdftex.def)             Requested size: 257.21901pt x 142.26378pt.
 
 
@@ -714,10 +714,10 @@ Package pdftex.def Info: images/kresz.jpg  used on input line 152.
 [15
 
 ]
-<images/plantuml.png, id=378, 1185.42876pt x 1220.56pt>
+<images/plantuml.png, id=383, 1185.42876pt x 1220.56pt>
 File: images/plantuml.png Graphic file (type png)
 <use images/plantuml.png>
-Package pdftex.def Info: images/plantuml.png  used on input line 190.
+Package pdftex.def Info: images/plantuml.png  used on input line 192.
 (pdftex.def)             Requested size: 359.23091pt x 369.88582pt.
 
 
@@ -725,20 +725,20 @@ Package pdftex.def Info: images/plantuml.png  used on input line 190.
 
 [17]
 4. fejezet.
-<images/fomenu.png, id=390, 1445.4pt x 813.0375pt>
+<images/fomenu.png, id=395, 1445.4pt x 813.0375pt>
 File: images/fomenu.png Graphic file (type png)
 <use images/fomenu.png>
-Package pdftex.def Info: images/fomenu.png  used on input line 215.
+Package pdftex.def Info: images/fomenu.png  used on input line 217.
 (pdftex.def)             Requested size: 252.90468pt x 142.26378pt.
-<images/fail.png, id=391, 1445.4pt x 813.0375pt>
+<images/fail.png, id=396, 1445.4pt x 813.0375pt>
 File: images/fail.png Graphic file (type png)
 <use images/fail.png>
-Package pdftex.def Info: images/fail.png  used on input line 224.
+Package pdftex.def Info: images/fail.png  used on input line 226.
 (pdftex.def)             Requested size: 252.90468pt x 142.26378pt.
-<images/succes.png, id=392, 1445.4pt x 813.0375pt>
+<images/succes.png, id=397, 1445.4pt x 813.0375pt>
 File: images/succes.png Graphic file (type png)
 <use images/succes.png>
-Package pdftex.def Info: images/succes.png  used on input line 229.
+Package pdftex.def Info: images/succes.png  used on input line 231.
 (pdftex.def)             Requested size: 252.90468pt x 142.26378pt.
 
 
@@ -747,25 +747,25 @@ Package pdftex.def Info: images/succes.png  used on input line 229.
  <./images/fomenu.PNG>]
 
 [19 <./images/fail.PNG> <./images/succes.PNG>]
-<images/easy.png, id=409, 1445.4pt x 813.0375pt>
+<images/easy.png, id=414, 1445.4pt x 813.0375pt>
 File: images/easy.png Graphic file (type png)
 <use images/easy.png>
-Package pdftex.def Info: images/easy.png  used on input line 240.
+Package pdftex.def Info: images/easy.png  used on input line 242.
 (pdftex.def)             Requested size: 252.90468pt x 142.26378pt.
-<images/medium.png, id=410, 1445.4pt x 813.0375pt>
+<images/medium.png, id=415, 1445.4pt x 813.0375pt>
 File: images/medium.png Graphic file (type png)
 <use images/medium.png>
-Package pdftex.def Info: images/medium.png  used on input line 246.
+Package pdftex.def Info: images/medium.png  used on input line 248.
 (pdftex.def)             Requested size: 252.90468pt x 142.26378pt.
-<images/hard.png, id=411, 1445.4pt x 813.0375pt>
+<images/hard.png, id=416, 1445.4pt x 813.0375pt>
 File: images/hard.png Graphic file (type png)
 <use images/hard.png>
-Package pdftex.def Info: images/hard.png  used on input line 252.
+Package pdftex.def Info: images/hard.png  used on input line 254.
 (pdftex.def)             Requested size: 252.90468pt x 142.26378pt.
-<images/test.png, id=412, 1445.4pt x 813.0375pt>
+<images/test.png, id=417, 1445.4pt x 813.0375pt>
 File: images/test.png Graphic file (type png)
 <use images/test.png>
-Package pdftex.def Info: images/test.png  used on input line 259.
+Package pdftex.def Info: images/test.png  used on input line 261.
 (pdftex.def)             Requested size: 252.90468pt x 142.26378pt.
 
 
@@ -779,143 +779,154 @@ Package pdftex.def Info: images/test.png  used on input line 259.
 
 ]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
-89.
+91.
  (c:/texlive/2024/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
 [23{c:/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
-<images/road.png, id=439, 651.93562pt x 339.51843pt>
+<images/road.png, id=444, 651.93562pt x 339.51843pt>
 File: images/road.png Graphic file (type png)
 <use images/road.png>
-Package pdftex.def Info: images/road.png  used on input line 322.
+Package pdftex.def Info: images/road.png  used on input line 324.
 (pdftex.def)             Requested size: 273.16449pt x 142.26378pt.
 
 
 [24]
-<images/jarmu.png, id=445, 460.72125pt x 265.74281pt>
+<images/jarmu.png, id=450, 460.72125pt x 265.74281pt>
 File: images/jarmu.png Graphic file (type png)
 <use images/jarmu.png>
-Package pdftex.def Info: images/jarmu.png  used on input line 339.
+Package pdftex.def Info: images/jarmu.png  used on input line 341.
 (pdftex.def)             Requested size: 246.64864pt x 142.26378pt.
 
 
 [25 <./images/road.PNG>]
-<images/keresztezodes.png, id=454, 536.75531pt x 307.1475pt>
+
+[26 <./images/jarmu.PNG>]
+<images/keresztezodes.png, id=465, 536.75531pt x 307.1475pt>
 File: images/keresztezodes.png Graphic file (type png)
 <use images/keresztezodes.png>
-Package pdftex.def Info: images/keresztezodes.png  used on input line 355.
+Package pdftex.def Info: images/keresztezodes.png  used on input line 362.
 (pdftex.def)             Requested size: 248.614pt x 142.26378pt.
 
 
-[26 <./images/jarmu.PNG> <./images/keresztezodes.PNG>]
+[27 <./images/keresztezodes.PNG>]
+
+[28]
 6. fejezet.
-<images/jarmu2.png, id=463, 477.28313pt x 294.34969pt>
+<images/jarmu2.png, id=477, 477.28313pt x 294.34969pt>
 File: images/jarmu2.png Graphic file (type png)
 <use images/jarmu2.png>
-Package pdftex.def Info: images/jarmu2.png  used on input line 367.
+Package pdftex.def Info: images/jarmu2.png  used on input line 384.
 (pdftex.def)             Requested size: 230.68092pt x 142.26378pt.
 
 
-[27
+[29
 
  <./images/jarmu2.PNG>]
-<images/mento2.jpg, id=470, 793.96625pt x 446.66875pt>
+<images/mento2.jpg, id=484, 793.96625pt x 446.66875pt>
 File: images/mento2.jpg Graphic file (type jpg)
 <use images/mento2.jpg>
-Package pdftex.def Info: images/mento2.jpg  used on input line 382.
+Package pdftex.def Info: images/mento2.jpg  used on input line 399.
 (pdftex.def)             Requested size: 252.87502pt x 142.26378pt.
-<images/korforgalom.jpg, id=472, 1204.5pt x 675.52374pt>
+<images/korforgalom.jpg, id=486, 1204.5pt x 675.52374pt>
 File: images/korforgalom.jpg Graphic file (type jpg)
 <use images/korforgalom.jpg>
-Package pdftex.def Info: images/korforgalom.jpg  used on input line 394.
+Package pdftex.def Info: images/korforgalom.jpg  used on input line 411.
 (pdftex.def)             Requested size: 253.65088pt x 142.26378pt.
 
 
-[28 <./images/mento2.jpg>]
-<images/villamos.jpg, id=480, 888.31876pt x 444.66125pt>
+[30 <./images/mento2.jpg>]
+<images/villamos.jpg, id=494, 888.31876pt x 444.66125pt>
 File: images/villamos.jpg Graphic file (type jpg)
 <use images/villamos.jpg>
-Package pdftex.def Info: images/villamos.jpg  used on input line 407.
+Package pdftex.def Info: images/villamos.jpg  used on input line 424.
 (pdftex.def)             Requested size: 284.20003pt x 142.26378pt.
-<images/mento.jpg, id=482, 903.375pt x 444.66125pt>
+<images/mento.jpg, id=496, 903.375pt x 444.66125pt>
 File: images/mento.jpg Graphic file (type jpg)
 <use images/mento.jpg>
-Package pdftex.def Info: images/mento.jpg  used on input line 412.
+Package pdftex.def Info: images/mento.jpg  used on input line 429.
 (pdftex.def)             Requested size: 289.01698pt x 142.26378pt.
 
 
-[29 <./images/korforgalom.jpg>]
+[31 <./images/korforgalom.jpg>]
 
-[30 <./images/villamos.jpg> <./images/mento.jpg>]
+[32 <./images/villamos.jpg> <./images/mento.jpg>]
 7. fejezet.
-<images/test_fail.png, id=498, 1444.64719pt x 813.0375pt>
+<images/test_fail.png, id=513, 1444.64719pt x 813.0375pt>
 File: images/test_fail.png Graphic file (type png)
 <use images/test_fail.png>
-Package pdftex.def Info: images/test_fail.png  used on input line 435.
+Package pdftex.def Info: images/test_fail.png  used on input line 452.
 (pdftex.def)             Requested size: 252.77296pt x 142.26378pt.
 
 
-[31
-
- <./images/test_fail.PNG>]
-
-[32]
-
 [33
 
+ <./images/test_fail.PNG>]
+Overfull \hbox (40.6769pt too wide) in paragraph at lines 474--501
+[] 
+ []
+
+
+
+[34]
+
+[35]
+
+[36
+
 ]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 4
-65.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 5
+11.
  (c:/texlive/2024/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Underfull \hbox (badness 4403) in paragraph at lines 471--472
+Underfull \hbox (badness 4403) in paragraph at lines 517--518
 \T1/lmtt/m/n/12 4 . 4 / getting _ started / introduction / first _ look _ at _ 
 the _ editor . html$[]\T1/lmr/m/n/12 , Meg-
  []
 
 
-Underfull \hbox (badness 6792) in paragraph at lines 473--474
+Underfull \hbox (badness 6792) in paragraph at lines 519--520
 []\T1/lmr/m/sc/12 Unity Tech-no-lo-gi-es\T1/lmr/m/n/12 : \T1/lmr/m/it/12 Unity 
 Tech-no-lo-gi-es\T1/lmr/m/n/12 : []$\T1/lmtt/m/n/12 https : / / docs . unity3d 
 . com /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 477--478
+Underfull \hbox (badness 10000) in paragraph at lines 523--524
 []\T1/lmr/m/sc/12 Unity Do-cu-men-ta-ti-on\T1/lmr/m/n/12 : \T1/lmr/m/it/12 Mon-
 o-Be-ha-vi-o-ur\T1/lmr/m/n/12 : []$\T1/lmtt/m/n/12 https : / / docs . unity3d .
  com /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 479--480
+Underfull \hbox (badness 10000) in paragraph at lines 525--526
 []\T1/lmr/m/sc/12 Unity Do-cu-men-ta-ti-on\T1/lmr/m/n/12 : \T1/lmr/m/it/12 Nav-
 Mesh\T1/lmr/m/n/12 : []$\T1/lmtt/m/n/12 https : / / docs . unity3d . com /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 481--482
+Underfull \hbox (badness 10000) in paragraph at lines 527--528
 []\T1/lmr/m/sc/12 Unity Do-cu-men-ta-ti-on\T1/lmr/m/n/12 : \T1/lmr/m/it/12 Ci-n
 e-ma-chi-ne\T1/lmr/m/n/12 : []$\T1/lmtt/m/n/12 https : / / docs . unity3d . com
  /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 481--482
+Underfull \hbox (badness 10000) in paragraph at lines 527--528
 \T1/lmtt/m/n/12 Packages / com . unity . cinemachine @ 3 . 1 / manual / index .
  html$[]\T1/lmr/m/n/12 , Meg-te-kint-ve:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 485--486
+Underfull \hbox (badness 10000) in paragraph at lines 531--532
 []\T1/lmr/m/sc/12 KRESZ Vizs-ga\T1/lmr/m/n/12 : \T1/lmr/m/it/12 KRESZ\T1/lmr/m/
 n/12 : []$\T1/lmtt/m/n/12 https : / / vizsgakozpont . hu / kozut /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 487--488
+Underfull \hbox (badness 10000) in paragraph at lines 533--534
 []\T1/lmr/m/sc/12 Jogtár\T1/lmr/m/n/12 : \T1/lmr/m/it/12 KRESZ táb-lák\T1/lmr/m
 /n/12 : []$\T1/lmtt/m/n/12 https : / / net . jogtar . hu / jogszabaly ? docid =
 
@@ -923,75 +934,75 @@ Underfull \hbox (badness 10000) in paragraph at lines 487--488
 
 
 
-[34
+[37
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 500--501
+Underfull \hbox (badness 10000) in paragraph at lines 546--547
 []\T1/lmr/m/sc/12 KRESZ vizs-ga\T1/lmr/m/n/12 : \T1/lmr/m/it/12 KRESZ fel-adat 
 men-t®-au-tó-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 500--501
+Underfull \hbox (badness 10000) in paragraph at lines 546--547
 \T1/lmr/m/it/12 val\T1/lmr/m/n/12 , []$\T1/lmtt/m/n/12 https : / / www . szon .
  hu / helyi-[]kozelet / 2025 / 07 /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 500--501
+Underfull \hbox (badness 10000) in paragraph at lines 546--547
 \T1/lmtt/m/n/12 megelozheto-[]a-[]mento-[]a-[]legtobben-[]bebukjak-[]ezt-[]a-[]
 kerdest # google _
  []
 
 
-Overfull \hbox (6.81438pt too wide) in paragraph at lines 506--507
+Overfull \hbox (6.81438pt too wide) in paragraph at lines 552--553
 \T1/lmtt/m/n/12 com / ue5-[]modeling-[]mode-[]tech-[]blog-[]sandsculpting-[]284
 4x1559-[]1885809c9ebd .
  []
 
-<nyilatkozat/nyilatkozat.pdf, id=554, 598.39557pt x 844.11362pt>
+<nyilatkozat/nyilatkozat.pdf, id=574, 598.39557pt x 844.11362pt>
 File: nyilatkozat/nyilatkozat.pdf Graphic file (type pdf)
 <use nyilatkozat/nyilatkozat.pdf>
-Package pdftex.def Info: nyilatkozat/nyilatkozat.pdf  used on input line 516.
+Package pdftex.def Info: nyilatkozat/nyilatkozat.pdf  used on input line 562.
 (pdftex.def)             Requested size: 598.3941pt x 844.11156pt.
 File: nyilatkozat/nyilatkozat.pdf Graphic file (type pdf)
 <use nyilatkozat/nyilatkozat.pdf>
-Package pdftex.def Info: nyilatkozat/nyilatkozat.pdf  used on input line 516.
+Package pdftex.def Info: nyilatkozat/nyilatkozat.pdf  used on input line 562.
 (pdftex.def)             Requested size: 598.3941pt x 844.11156pt.
-<nyilatkozat/nyilatkozat.pdf, id=557, page=1, 598.39557pt x 844.11362pt>
+<nyilatkozat/nyilatkozat.pdf, id=577, page=1, 598.39557pt x 844.11362pt>
 File: nyilatkozat/nyilatkozat.pdf Graphic file (type pdf)
 <use nyilatkozat/nyilatkozat.pdf, page 1>
 Package pdftex.def Info: nyilatkozat/nyilatkozat.pdf , page1 used on input line
- 516.
+ 562.
 (pdftex.def)             Requested size: 598.3941pt x 844.11156pt.
 File: nyilatkozat/nyilatkozat.pdf Graphic file (type pdf)
 <use nyilatkozat/nyilatkozat.pdf, page 1>
 Package pdftex.def Info: nyilatkozat/nyilatkozat.pdf , page1 used on input line
- 516.
+ 562.
 (pdftex.def)             Requested size: 597.90103pt x 843.41602pt.
 
 
-[35
+[38
 
 ]
 File: nyilatkozat/nyilatkozat.pdf Graphic file (type pdf)
 <use nyilatkozat/nyilatkozat.pdf, page 1>
 Package pdftex.def Info: nyilatkozat/nyilatkozat.pdf , page1 used on input line
- 516.
+ 562.
 (pdftex.def)             Requested size: 597.90103pt x 843.41602pt.
 File: nyilatkozat/nyilatkozat.pdf Graphic file (type pdf)
 <use nyilatkozat/nyilatkozat.pdf, page 1>
 Package pdftex.def Info: nyilatkozat/nyilatkozat.pdf , page1 used on input line
- 516.
+ 562.
 (pdftex.def)             Requested size: 597.90103pt x 843.41602pt.
 
 
 File: nyilatkozat/nyilatkozat.pdf Graphic file (type pdf)
 <use nyilatkozat/nyilatkozat.pdf, page 1>
 Package pdftex.def Info: nyilatkozat/nyilatkozat.pdf , page1 used on input line
- 516.
+ 562.
 (pdftex.def)             Requested size: 597.90103pt x 843.41602pt.
-[36
+[39
 
  <./nyilatkozat/nyilatkozat.pdf
 
@@ -1003,26 +1014,33 @@ red.
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-30>
  ***********
-Package rerunfilecheck Info: File `CUK9HS_2026.out' has not changed.
-(rerunfilecheck)             Checksum: A74C802FD82D26BCA61144B004B6A208;7761.
+
+
+Package rerunfilecheck Warning: File `CUK9HS_2026.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `CUK9HS_2026.out':
+(rerunfilecheck)             Before: CCA7ABA8D651A86D94DE9FD3608B1FA1;8018
+(rerunfilecheck)             After:  9F487E1E995E0D968E0382B4C5E3DEB0;8217.
  ) 
 Here is how much of TeX's memory you used:
- 15441 strings out of 473578
- 248805 string characters out of 5732242
- 666539 words of memory out of 5000000
- 37967 multiletter control sequences out of 15000+600000
+ 15451 strings out of 473578
+ 248918 string characters out of 5732242
+ 666542 words of memory out of 5000000
+ 37972 multiletter control sequences out of 15000+600000
  621355 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,17n,93p,1102b,638s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,17n,93p,1184b,638s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2024
 /texmf-dist/fonts/type1/public/lm/lmcsc10.pfb><c:/texlive/2024/texmf-dist/fonts
 /type1/public/lm/lmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lm
 r8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/texlive
 /2024/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on CUK9HS_2026.pdf (36 pages, 5498213 bytes).
+Output written on CUK9HS_2026.pdf (39 pages, 5506525 bytes).
 PDF statistics:
- 645 PDF objects out of 1000 (max. 8388607)
- 541 compressed objects within 6 object streams
- 134 named destinations out of 1000 (max. 500000)
- 538 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 667 PDF objects out of 1000 (max. 8388607)
+ 560 compressed objects within 6 object streams
+ 139 named destinations out of 1000 (max. 500000)
+ 546 words of extra memory for PDF output out of 10000 (max. 10000000)
 
