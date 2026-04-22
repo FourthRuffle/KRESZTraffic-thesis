@@ -34,18 +34,14 @@
 
 \chapter*{Bevezetés}
 \addcontentsline{toc}{chapter}{Bevezetés}
-A szakdolgozatom témáját akkor kellett választanom, amikor a szabadidőm nagy részét a jogosítványom megszerzésére fordítottam. A szabályok megértése és megtanulása egyszerű volt, de az úton, a közlekedési helyzetekben való alkalmazásuk már sokkal bonyolultabb. Az úgynevezett ,,3 pontos'' feladatok, amik egy KRESZ vizsga jelentős részét alkotják, erre alapulnak. Az ilyen feladványok játékos gyakorlására akartam megoldást találni. 
+Sosem állt tőlem messze a számítástechnika. Már kiskoromban találkoztam személyi számítógéppel, mobiltelefonnal és egyéb programozható felületekkel. Gyerekkoromban nagy érdeklődést kezdtem el mutatni a robotika és a programozás iránt. Először még csak szakköri szinten csináltam egyszerű játékokat gyerekeknek kitalált felületen. Később elkezdtem komolyabban is érdeklődni a videojátékok körében és találtam is párat ami tökéletesem megfelelt délutáni tevékenységnek. Minden játéknál amit valaha játszottam felmerül bennem a kérdés, hogy vajon hogyan működnek a háttérben a dolgok. Mi az ami lehetővé teszi, hogy a játékot lássam és játsszam. Az egyetem előtt is tanultam már informatikát, de úgy érzem hallgatóként mélyült el leginkább a tudásom. Az órákon értettem meg igazán mekkora különbség van a játék és a játékfejlesztés között.
 
-Egy olyan felületet szerettem volna létrehozni ami magába tudja foglalni egy közlekezdési szituáció minden elemét. Fontos hogy a részletek könnyen felismerhetőek legyenek, és az egész jelenet interaktív legyen, segítve az adott helyzetben érvényesülő szabályok megértését. A tervem megvalósítására a Unity keretrendszert találtam a legalkalmasabbnak.
+Mindenféleképpen olyan szakdolgozatot akartam amihez motiváció is köt. Akkoriban a számítógépes játékok közül is a versenyzős, autós téma fogott meg a legjobban, és nagyon elkezdett érdekelni az autók és a közlekedés világa. De ahhoz, hogy elmerülhessek benne kellett egy saját gépjármű, amihez pedig vezetői engedély szükséges. így hát amikor szakdolgozati témát kellett választanom, akkor éppen a szabadidőm nagy részét a jogosítványom megszerzésére fordítottam. A szabályok megértése és megtanulása egyszerű volt, de az úton, a közlekedési helyzetekben való alkalmazásuk már sokkal bonyolultabb. Az úgynevezett ,,3 pontos'' feladatok, amik egy KRESZ vizsga jelentős részét alkotják, erre alapulnak. Az ilyen feladványok játékos gyakorlására akartam megoldást találni, Mivel úgy éreztem, hogy a mostani tananyagok a témában nagyon nyersek és monotonok, ráadásul a legtöbb esetben egy egyszerű képet kell értelmezni rövid idő alatt ami még inkább megnehezíti a tanulók dolgát.
 
-\begin{figure}[ht!]
-	\centering
-	\begin{minipage}{7.5cm}
-		\centering
-		\includegraphics[height=5cm]{images/harompontos}
-		\caption{Három pontos feladat (szuperjogsi.hu) \cite{harompontos}}
-	\end{minipage}
-\end{figure}
+Egy olyan felületet szerettem volna létrehozni ami magába tudja foglalni egy közlekezdési szituáció minden olyan elemét ami a tananyag részét képezi. Szerettem volna, hogy a program hasonlítson az előbb említett vizsgafeladatokra, hogy a megjelenés már ne egy újdonság legyen azok számára akik ilyen eszközzel szeretnének tanulni. Fontos hogy a részletek könnyen felismerhetőek legyenek, és az egész jelenet interaktív legyen, segítve az adott helyzetben érvényesülő szabályok megértését.
+
+A Unity a C\# programozási nyelvet hasznája, amit az egyetem során több ízben is tanultam és megismerhettem. A C alapú nyelvek többször is felbukkantak az egyetemi órákon így biztossá vált, hogy közülük fogok választani egyet. Végül tervem megvalósítására a Unity keretrendszert találtam a legalkalmasabbnak. Szakdolgozatomban bemutatom a fejlesztéshez használt technológiát, valamint a dolgozat inspirációs hátterét, a lépéseket amikkel a projekt haladt, és felvázolja a jövőbeli fejlesztéseket.
+
 A szakdolgozat kódja, a hozzá tartozó build, és a játék működését bemutató videó a itt található:
 
 Forráskód: https://github.com/FourthRuffle/KRESZTraffic-thesis
@@ -55,6 +51,8 @@ Build: https://github.com/FourthRuffle/KRESZTraffic-thesis
 Videó: https://youtu.be/Q9aeaCG2Be4
 
 \chapter{Technológiai áttekintés}
+A játékfejlesztés sok különböző technológiai fejlesztéssel büszkélkedhet. A modern játékok alapja a játékmotor, ez egy olyan szoftver ami barkácsasztalként funkcionál a fejlesztők kezeiben. A videojátékok rendszerei bonyolultak és rengeteg elemből állnak össze, azért használnak a programozók játékmotorokat mert az fejlesztői környezetek, azok a keretrendszerek amiket az évek alatt létrehoztak, már tartalmazzák a legtöbb olyan funkciót amik elengedhetetlenek lennének egy modern videojáték fejlesztéséhez. Ilyenek az animációk, a szimulált fizika, valamint a játékok háttérben futó logikája. A napjainkban legismertebb játékmotorok az Unreal Engine, Godot és a Unity.
+
 A 20.~század alkonyán a játékfejlesztők még sokkal kevesebben és kisebb erőforrásból dolgoztak, így sokkal gyakoribb volt, hogy a játékaikhoz saját motort fejlesztettek, mivel akkoriban nem sok kész, piaci játékmotor volt elérhető. Nagy segítség lehetett viszont, ha valaki meg tudott vásárolni egy kész kódbázist.
 
 Ilyen volt például az \textit{id Software} cég fejlesztette ,,id Tech'' motor, melynek később több verciója is készült. Ezeket a motorokat használták az első meghatározó FPS~(first~person shooter) játékok mint például \textit{DOOM}, \textit{Quake}, \textit{Wolfenstein} sorozatok alapjául.\cite{id_software}
@@ -70,81 +68,114 @@ Ilyen volt például az \textit{id Software} cég fejlesztette ,,id Tech'' motor
 \newpage
 \section{Unreal Engine}
 
-Az \textit{Unreal Engine} az mai napig egyik legmeghatározóbb játékmotor. Az Epic Games játékfejlesztő cég 1998-ban készítette az \textit{Unreal} nevú játékukhoz. Azóta 4-5 évente jelent meg új verzió, ami mindig jelentős változásokat hozott a aktuális játékiparba. 
+Az \textit{Unreal Engine} az mai napig egyik legmeghatározóbb játékmotor. Az Epic Games játékfejlesztő cég 1998-ban készítette az \textit{Unreal} nevú játékukhoz. 
+Eredetileg az is az FPS genre kiszolgálására készült. Később viszont a TPP (third person perspective) féle kalandjátékok és rengeteg más 3D-s játék alapjául is szolgált, legyen az lövöldözős, kaland, nyílt világ, vagy történet műfajú. Manapság már nem csak játékfejlesztésre hanem más grafikai alkalmazások és fizikai szimulációk szemléltetésére is használják.
 
+Az Unreal Engine olyan eszközöket és funkciókat tartalmaz, amelyek egyesítik az interaktív tervezést és a hagyományos technikákat, ez lehetővé teszi, hogy magával ragadó történeteket és játékélményt hozzanak létre vele. A fejlesztők meglepően élethű és lenyűgöző dolgokat az Unreal Engine dinamikus világításával, valós idejű render rendszerével és karakterkészítő eszközeivel. A motor méretezhetősége és alkalmazhatósága miatt főleg, nagyszabású, nyílt világú játékok készítésére használják leginkább funkciók révén, mint a \textit{World Partition} vagy a \textit{Blueprint} vizuális fejlesztés.\cite{unreal}
 \begin{figure}[ht!]
 		\centering
 		\includegraphics[height=5cm]{images/unreal}
 		\caption{Unreal Engine kezőfelület (unrealengine.com) \cite{unreal_img}}
 \end{figure}
 
-Eredetileg az \textit{Unreal Engine} is az FPS genre kiszolgálására készült. Később viszont a TPP (third person perspective) féle kalandjátékok és rengeteg más 3D-s játék alapjául is szolgált, legyen az lövöldözős, kaland, nyílt világ, vagy történet műfajú.
+Az Unreal Engine rendszere teret ad a ,,real-time'' interaktív alkalmazások és játékok fejlesztéséhez, egybefoglalja megjelenítést, a fizikai szimulációt, az animációkat és logikát. Ezek az integrált rendszerek összesége és kapcsolata teszi lehetővé a bonyolult virtuális világok létrehozását és futtatását.
+A motor a mai napig C++ nyelven működik.  
 
-A motor a mai napig C++ nyelven működik, 2012-ig Java-val társítva az \textit{UnrealScript}-et használta, azonban ezt lecserélték és azóta a \textit{Blueprint} vizuális programozási felület a fejlesztők barkácsolóasztala. 
-
-Az alapvetően ingyenes szoftver legújabb, 2022-es verziójának  forráskódja a GitHub-on is elérhető, viszont a kereskedelmi felhasználás jogdíj köteles, amit az Epic Games a bevétel 5\%-aként határozott meg. \cite{unity_engine}
+Az alapvetően ingyenes szoftver legújabb, 2022-es verziójának  forráskódja a GitHub-on is elérhető. Tanulóknak és iskoláknak teljesen ingyenesen letölthető és korlátlanul használható, viszont a kereskedelmi felhasználás jogdíj köteles, amit az Epic Games a bevétel 5\%-aként határozott meg amennyiben az eléri az egymillió amerikai dollárt.  \cite{unreal_engine}
 \section{Godot}
-Egy másik szintén ingyenesen hozzáférhető és népszerű játékmotor a \textit{Godot}. \textit{Juan Linietsky} fejlesztette és adta ki először 2001-ben. A motor több néven is ismerté vált, majd 2014-ben felkerült GitHubra. Napjainkban a fejlesztés a 4.0-ás verziónál tart, ahol a 3D-s felületet igyekeznek felzárkóztatni a versenytársakhoz. 
+A Godot egy nyílt forráskódú játékmotor, ez lehetőséget ad minden fejlesztőknek, hogy szabadon használja és módosítsa vagy továbbfejlessze a már felépített rendszert. A nyitott forráskódú szoftverek jellemzője, hogy a rendszer gyorsan fejlődnek az aktív és folyamatosan növekvő közösség miatt.
+
+Fontos tulajdonsága, hogy a játékfejlesztés legmeghatározóbb elemeit, a jeleneteket, objektumokat, animációkat, és a játék logikáját egy saját integrált szerkesztői felület fogja össze. A fejlesztők minden lényeges részt, alkalmazáson belül tudnak kezelni, így lecsökken a külső alkalmazásokra való hagyatkozás igénye. A jelenetek és a csomópontok adják a motor magját. A csomópontokból épülnek fel a jelenetek miután a csomópontok egy szabályszerű csoportba rendeződnek.
+
+A Godot motorjában 2D-s és 3D-s játékokat is alkothatunk, ehhez megvan a program fizikai és grafikai képessége is, valamit van benne lehetőség a érintkezések kezelésére is így komplexebb játékmeneteket is létrehozhatunk akár. Napjainkban a fejlesztés a 4.0-ás verziónál tart, ahol a 3D-s felületet igyekeznek felzárkóztatni a versenytársakhoz. 
 
 \begin{figure}[ht!]
 		\centering
 		\includegraphics[height=5cm]{images/godot}
-		\caption{Godot kezőfelület (Godot 4.6 2026) \cite{godot_img}}
+		\caption{Godot kezelőfelület (Godot 4.6 2026) \cite{godot_img}}
 \end{figure}
 
 A motor nem csak egy programozási nyelvhez kötött, de a három leggyakoribb a C++ és C\#, valamit a GDSript. A GDScript a Godot saját rendszeréhez optimalizált objektum orientált programozási nyelv, a Pythonhoz hasonló struktúrával. A vizuális programozás opciója itt is megjelenik, régebben a \textit{VisualScript}-ként, ez viszont a 4.0-ás verzióban már nem elérhető. \cite{godot_engine}
 \section{Unity}
-A Unity a \textit{Unity Technologies} fejlesztői által készített ingyenesen használható játékmotor. A motor támogatása kiterjed a számítógépeken kívül a konzolokra és okostelefonokra is. A 2D-s és 3D-s alkalmazások készítésére is alkalmas fejlesztői környezet hamar elterjedt a mobilfejlesztők és a feltörekvő, egy vagy több személyes kis fejlesztőcsapatok körében. A Unity felépítése könnyen megérthető és a C\# programozási nyelv is gyorsan tanulható, emellett rengeteg oktatóvideó és kurzus is segíti a kezdőket az alapok elsajátításában.\cite{unity_engine}
+A Unity 2005-ben indult, és mára már az egyik legismertebb és legmeghatározóbb játékfejlesztési környezet. A letöltése és a használata ingyenes, viszont itt is megjelenik a nagykereskedelem, ahol már természetesen díjat kell fizetni a keretrendszer használatáért.
+A fejlesztőcég először \textit{Over The Edge Entertainment} jelent meg, csak 2007-ben nevezték át \textit{Unity Technologies}-ra. \cite{unity_technologies}
+A motor támogatása kiterjed a számítógépeken kívül a konzolokra és okostelefonokra is. A 2D-s és 3D-s alkalmazások készítésére is alkalmas fejlesztői környezet hamar elterjedt a mobilfejlesztők és a feltörekvő, egy vagy több személyes kis fejlesztőcsapatok körében. A Unity felépítése könnyen megérthető és gyorsan tanulható, emellett rengeteg oktatóvideó és kurzus is segíti a kezdőket az alapok elsajátításában.\cite{unity_technologies}
+
+A nagykereskedelmi díjazás általában nem probléma, a nagy fejlesztőcégeknek van annyi bevételük, hogy sok pénzt kifizessenek a licenszért. 2023-ban viszont nagy dráma volt a Unity áraival kapcsolatban amikor is bevezették a \textit{Unity Runtime Feet}-t. A lényege az volt, hogy a fejlesztőknek a felhasználói telepítések száma után kellett volna részesedést fizetnie a \textit{Unity technologies}-nak. Ez sokakat felbosszantott, és az internetes fórumok megteltek a felháborodott fejlesztőkkel. Később 2024-ben a felhasználói nyomás hatására bejelentették, hogy eltörlik a ezt a típusú dijazást és visszatérnek az ülésalapú díjazáshoz, ami azt jelenti, hogy fix havidíjat vagy éves díjat számolnak fel, minden olyan fejlesztő után aki hozzáfér a szoftverhez és annak szolgáltatásaihoz. A magánszemélyeknek továbbra is ingyenes maradt.\cite{unity_technologies}
+
+A Unity a C\# programozási nyelvet használja alapként. Az objektumokhoz szkripteket csatolhatsz. A szkriptekben írod le a játék logikáját, ezután a szkripteket, hozzácsatolod a \textit{GameObject}-ekhez, így azok megkapják a szkriptekben leírtakat mint tulajdonság. A szkriptek hasonlóan működnek mint a komponensek, funkciót adnak az adott objektumnak, legyen az jármű, a játékos karaktere, vagy akár egy egyszerű fa ami ki tud dőlni. A Unity objektumorientáltsága nagyon népszerűvé tette a játékfejlesztők köreiben. Sok híres játékfejlesztő cég döntött már emellett a keretrendszer mellett, de rengeteg apró projekt alapja is a Unity.
+
+A Unity vizuális kezelőfelülete, az Editor, egy integrált fejlesztői környezet amit a játék elemeinek a kezelésére használhatunk. Itt majdnem mindenhez hozzáférünk ami játékunkhoz kell. Létrehozhatunk és szerkeszthetünk komponenseket, GameObjectek segítségével felépíthetjük a játék világát. Az Editor több részből áll először is, az \textit{Inspector} segítségével nyomonkövethetjük az osszes elem tulajdonságait, manuálisan változtathatjuk az objektumokhoz csatolt komponensek értékeit.
 
 \begin{figure}[ht!]
-		\centering
-		\includegraphics[height=5cm]{images/unity}
-		\caption{Unity kezőfelület (2026) \cite{unity_img}}
+	\centering
+	\includegraphics[height=5cm]{images/unity}
+	\caption{Unity kezelőfelület (2026) \cite{unity_img}}
 \end{figure}
-
-A fejlesztőcég először \textit{Over The Edge Entertainment} jelent meg, csak 2007-ben nevezték át \textit{Unity Technologies}-ra. \cite{unity_technologies}
-
-A legjelentősebb fejlesztései:
-\begin{itemize}
-	\item 2010: \textit{Unity Asset Store}. Egy ,,Piac'', ahol a Unity-ben való fejlesztéshez használható fájlokat találhatsz ingyenesen és díjazva is.
-	\item 2018: \textit{Unity Hub}. Egy külön felület, ahol a Unity projekteket kezelheted és a motor különböző verziói közötti navigálást is megkönnyíti.
-\end{itemize} 
+\newpage
+Alul a \textit{Project} és \textit{Console} fül. A Project alatt látjuk a mappahierarchiát és bennük az összes rendelkezésre álló eszközt. Ezek az eszközök angolul \textit{Assets} az összes olyan fálj vagy elem ami a programhoz tartozik, a jelenetektől a szkripteken át és a legkisebb textúráig. Itt kezelhetjük a \textit{PreFab}-jeinket is, amik a játékhoz használt modellek. Ezek a alkotják a 3D-s játékok karaktereit és környezetét. A másik fül a \textit{Console}, itt tudjuk ellenőrizni a Unity üzeneteit mint például az esetleges hibák értesítőit vagy az állatlunk a szkriptekben leírt ,,logolás'' eredményeit. A programban én is használtam egy \textit{Feedback} rendszert ami minden számomra hasznos adat pillanatnyi állapotát írta ki nekem a konzolra.
 
 \begin{figure}[ht!]
 		\centering
 		\includegraphics[height=5cm]{images/unity_sajat}
-		\caption{Unity kezőfelület (Saját projekt)}
+		\caption{Unity kezelőfelület (Saját projekt)}
 \end{figure}
-
 
 \subsection{Komponensek}
-A Komponensek a Unity egyik fő résztvevői. A komponens tulajdonságai teszik lehetővé, hogy egy \textit{GameObject} személyre szabható legyen. A GameObject-ek építik fel a játékokat, ezek a fő elemei a kész programnak. Sok komponens mint például a \textit{Transform} vagy a \textit{Collider}-ek, kevesebb funkciót ágyaznak magukba vagy rengetegszer felbukkanhatnak a program során. \cite{unity_components}
+A Komponensek a Unity egyik fő résztvevői. A komponens tulajdonságai teszik lehetővé, hogy egy \textit{GameObject} személyre szabható legyen. A GameObject-ek építik fel a játékokat, ezek a fő elemei a kész programnak. Sok komponens mint például a \textit{Transform} vagy a \textit{Collider}-ek, kevesebb funkciót ágyaznak magukba vagy rengetegszer felbukkanhatnak a program során. \cite{unity_components}. Unity a saját komponensek létrehozását is lehetővé teszi, ezáltal kivételes szabadságot adva a fejlesztőnek. Amennyiben ezeknek a komponenseknek őse a \textit{MonoBehaviour} osztály, az összes többi GameObject-re rácsatolhatóvá válnak és így új funkciókat adhatunk az adott objektumnak. \cite{unity_monobehaviour}
 
-A Unity a saját komponensek létrehozását is lehetővé teszi, ezáltal kivételes szabadságot adva a fejlesztőnek. Amennyiben ezeknek a komponenseknek őse a \textit{MonoBehaviour} osztály, az összes többi GameObject-re rácsatolhatóvá válnak és így új funkciókat adhatunk az adott objektumnak. \cite{unity_monobehaviour}
-\newpage
+A \textit{GameObject} a Unity Editor legfontosabb elemei. Minden tárgy, minden elem amit látsz a szerkesztői felületen GameObjectnek számít, a játék karaktereitől, a kamerák, fény és hangforrások, de az összes fa vagy házikó is mind közéjük tartozik. Magukban viszont még nem képesek semmire, ,,property'' azaz tulajdonságokat kell adni nekik. A tulajdonságok mellé társulnak a komponensek amik funkcionalitást adnak nekik. Ilyen például a Transform komponens, amivel minden GameObject rendelkezik, ezzel határozzuk meg a méreteit, az elforgatását és a pozícióját. 
+
+Egy egyszerű kockának van még \textit{Mesh}, és lehet például \textit{Collider} komponenese. A \textit{Mesh Filter} a kocka 3D grafikai megjelenítésének az alapja. Lehet három vagy négyszög alapú. Ide tartozik még a \textit{Mesh Renderer} is ami filter geometriai adatait felhasználva rendereli a tárgy pozícióját a Transform komponens alapján. A Collider már sokkal inkább opcionális. Egy kocka esetében \textit{Box Collidert} adunk neki. Ez a komponens a nevéből adódóan ,,collide'' azaz ütközni tud más colliderekkel. Így működik a ,,hitbox'', egy autós játékban, mindkét autó rendelkezik colliderel, nem haladhatnak át egymáson és ha egymásnak ütköznek a az autók összetörnek.
+
+Komponens csoportok is léteznek, ilyen például a \textit{NavMesh}. A \textit{NavMesh} egy mesterséges intelligencia alapú rendszer. Fő feladata a ,,Pathfinding'' azaz útkeresés. Három fő része van, a felület, az ügynök és az akadály. A NavMesh feladata, hogy bejárja a felületet kikerülve az akadályokat és ezzel megtalálni a legmegfelelőbb útvonalat. A technika lényege, hogy a nyílt világban navigálás megoldása. \cite{navmesh}
+
+Egy másik nagy csoport a \textit{Cinemachine} ami a projekt animációiért felel. Rengeteg különféle részből és komponensből áll, és a segítségével sokféle animáció hozható létre a környezeten belül. A projektben használt komponens a \textit{DollyCart}\cite{cinemachine} volt ami járművek megtett útjának a kezdőpontból a végpontba történő mozgás animációját biztosította. A járművekhett csatolt \textit{DollyCart} komponens képes az utakra rögzített animációs síneken végig haladni, így azt a látványt keltve, hogy a jármű áthaladt a kereszteződésen.
+
+\chapter{Inspirációs háttér}
+
 \section{Közlekedési szabályok}
-A Közúti Rendelkezések Egységes Szabályozása (rövidítve: KRESZ) az a  közlekedési szabálygyűjtemény amely a Magyarország területén levő közutakon és közforgalom elől el nem zárt magánutakon folyó közlekedést szabályozza.
-
-A közúti forgalom rendjét már a 19. században elkezdték meghatározni. Az első magyar KRESZ egy 1910-ben született belügyminiszteri rendelet ami az azt egy évvel megelőző \textit{Párizsi egyezmény} alapjaira készült. Ekkor még csak töredéke volt a mai szabályrendszernek. Ami viszont már ebben a korban és megjelent a KRESZ-ben az az autók műszaki vizsgálata és rendszámozása, a gépjárművezetők képzése, valamint az első négy közúti jelzőtábla:
-\begin{itemize}
-	\item útkereszteződés
-	\item kanyar
-	\item vasúti átjáró
-	\item bukkanó
-\end{itemize}
-1941-ben vezették be a jobboldali közúti közlekedést és ezzel együtt az úgynevezett ,,Jobbkéz szabályt''. 
-
+A Közúti Rendelkezések Egységes Szabályozása (rövidítve: KRESZ) az a  közlekedési szabálygyűjtemény amely a Magyarország területén levő közutakon és közforgalom elől el nem zárt magánutakon folyó közlekedést szabályozza. A közúti forgalom rendjét már a 19. században elkezdték meghatározni. Az első magyar KRESZ egy 1910-ben született belügyminiszteri rendelet ami az azt egy évvel megelőző \textit{Párizsi egyezmény} alapjaira készült. Ekkor még csak töredéke volt a mai szabályrendszernek. Ami viszont már ebben a korban és megjelent a KRESZ-ben az az autók műszaki vizsgálata és rendszámozása, a gépjárművezetők képzése, valamint az első négy közúti jelzőtábla. 1941-ben pedig bevezették a jobboldali közúti közlekedést és ezzel együtt az úgynevezett ,,Jobbkéz szabályt'', innentől kezdve vált igazán fontossá a utak alárendeltsége, az elsőbbségadás és az áthaladási sorrend. Ezek nélkül a közlekedés valóságos káosz lenne.
 \begin{figure}[ht!]
+	\centering
+	\begin{minipage}{7.5cm}
 		\centering
-		\includegraphics[height=5cm]{images/kresz}
-		\caption{KRESZ táblák \cite{kresz_img}}
+		\includegraphics[height=5cm]{images/harompontos}
+		\caption{Három pontos feladat (szuperjogsi.hu) \cite{harompontos}}
+	\end{minipage}
 \end{figure}
+
+\section{Közlekedési táblák}
+Manapság már több mint 100 közlekedési tábla van az utakon. Minden tábla különböző jelentéssel bír és sok csoportba lehet őket sorolni. A közlekedési táblák, segítenek, figyelmeztetnek, útba igazítanak. Az internet és a GPS rendszerek felvirágzása előtt már mindössze a közúti táblákból tájékozódva el lehetett jutni szinte bárhova a világban, és a legfontosabb, hogy biztonságban.
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[height=5cm]{images/kresz}
+	\caption{KRESZ táblák \cite{kresz_img}}
+\end{figure}
+\subsection{Egyenrangú kereszteződés}
+Ez a tábla a figyelmeztető táblák közé tartozik, az ilyen táblák többnyire fehér alapú piros szélű háromszögek a az élükre állítva. Ebben az esetben a háromszög közepén egy fekete ,,X'' van ezzel utalva a kereszteződésre. Az ilyen kereszteződésekben mindkét út ugyan azzal az alárendeltségi szinttel bír, így a rajtuk haladókat nem korlátozza tábla. Ez esetben sem mehetnek viszont egymásnak, erre találták ki a jobboldali közlekedéssel társuló jobbkéz szabályt, ami kimondja, hogy ilyen feltételek mellett a járműveknek a nekik jobbról érkező másik járműnek elsőbbséget kell adniuk. Ez a szabály a baloldali közlekedéssel rendelkező országokban fordítva működik. 
+\subsection{Elsőbbségadás kötelező}
+Az \textit{Elsőbbségadás kötelező} tábla sokszor társul a \textit{Főút} táblával. Ez azért fordul elő, mert ez a tábla arra figyelmeztet, hogy egy felsőbbrendű útszakasz következik, és a tábla melletti járműnek elsőbbséget kell adnia a főúton haladóaknak. Itt még nem kötelezik a járműveket megállásra, így abban az esetben, ha nincs senki akinek elsőbbséget kell adnia, egyszerű lassítással és körültekintéssel léphet be a kereszteződésbe.
+\subsection{STOP}
+A \textit{STOP! Elsőbbségadás kötelező} az amire a legtöbben emlékeznek és asszociálnak ha közlekedési tábláról van szó. Piros nyolcszögletű tábla ami hasonló jelentéssel bír mint az előző, viszont ebben az esetben már kötelező a megállás is. A legtöbb STOP tábla útburkolati jellel is el van látva, ennél a jelnél minden esetben meg kell először állítani a járművet amikor egy ilyen táblához érkezünk. Amennyiben a kereszteződés nem belátható, a vonalnál megállást követően előrehaladhat a másik úttest széléig, hogy onnan hajtsa végre a becsatlakozást.
+\subsection{Főút}
+A \textit{Főút} a felsőbbrendű utat jelzi egy sarkára állított fehér alapon sárga-fekete táblával, általában kétirányú és egy-egy sávból áll. Az ezen haladó számíthat arra, hogy a mellékutakról becsatlakozni kívánó más járművek megadják neki az elsőbbséget. Ettől függetlenül ajánlott odafigyelni a mellékutakra, vagy esetleg más főutak kereszteződéseire, habár ezek már többnyire közlekedési lámpával is el vannak látva.
+\subsection{Vasúti átjáró}
+A vasúti átjáró a legveszélyesebb hely a közlekedéskultúrában. Tábla, sorompó és fénysorompóval biztosítják, hogy ne legyen jármű a vasúti síneken amikor a vonat áthalad. Ez a tábla nem egy szokványos kereszteződésre figyelmeztet. Ezeken a helyeken van egy minimum sebesség, legalább 5 km/h-val kell áthaladnia a járműveknek az átjárón.
+\cite{kresz_tabla}
+
+ 
 
 \chapter{Rendszerterv}
 
 \section{A rendszer célja}
-A szakdolgozat célja egy olyan játék létrehozása, amiben a KRESZ vizsgák és tananyagokban szereplő ,,3-pontos'' feladatokat játékos módon érthetőbbé, átláthatóbbá és tanulhatóbbá teszi. Fontos, hogy a játékos tudja tesztelni a tudását, a játék pedig interaktív és reszponzív legyen.
+A szakdolgozat célja egy olyan program létrehozása, amiben a KRESZ vizsgák és tananyagokban szereplő ,,3-pontos'' feladatokat játékos módon érthetőbbé, átláthatóbbá és tanulhatóbbá teszi. Alapjaiban életszerű közlekedési szituációk szimulálása, és teszt szerű megoldása.  Fontos, hogy a játékos tudja tesztelni a tudását, a játék pedig interaktív és reszponzív legyen. 
+\section{Fő funkciók}
+A játékos két mód közül választhat, az elsőben véletlenszerűen felépített szituációkat kap amiket meg kell oldania. A megoldás folyamata, hogy először megvizsgálja az összes feladatban szereplő járművet, és a kereszteződést. A kereszteződés táblákkal lehet ellátva amik jelzik az adott út esetleges alárendeltségét. Az utak után megvizsgálja a járműveket, a program megmutatja, hogy az adott járművek melyik irányba szeretnének továbbhaladni és melyik útra fognak érkezni.
 
+Ezekből az információkból a játékosnak ki kell találnia, hogy mi a feladat helyes megfejtése. A program is ugyan ezek információk birtokában egy algoritmus segítségével megoldja a feladatot. A feladatmegoldáshoz a játékosnak rá kell kattintania a kiválasztott járműre, ami helyes lépés esetén elindul és elhagyja a kereszteződést. Ezután a játékos ezt a folyamatot ismételgeti ameddig el nem fogynak a járművek. Minden helyesen megoldott feladat után jár egy pont. A játékos annyi feladatot oldhat meg amennyit akar, így gyűjtheti a pontokat.
+
+A második módban szintén ilyen feladatokat kell megoldani viszont egy véges ellenőrzött környezetben. Összesen 30 feladatból 90\%-os eredményt kell elérni a teszt teljesítéséhez. A teszt 3 különböző nehézségi fokozatból álló szituációkat használ, arányosan elosztva. Minden tesztet 10 darab könnyű, 10 darab közepes és 10 darab nehéz szintű feladvány alkot.
 \section{Telepítés}
 A nem szükséges telepíteni a játékszoftvert, egyből a kicsomagolás után indítható a mappában található alkalmazással.
 \section{Fejlesztéshez használt eszközök}
@@ -153,7 +184,15 @@ A nem szükséges telepíteni a játékszoftvert, egyből a kicsomagolás után 
 	\item Visual Studio: A programozói környezet, amely Unity támogatással rendelkezik. Verzió: Community 2022
 	\item Visual Studio, WinForms: Vizuális fejlesztőkörnyezet a Visual Studio-n belül. A program kezdeti algoritmusainak a C\# nyelvben való megvalósításra szolgált.
 \end{itemize}
-\section{Funkcionális elvárások}
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[height=13cm]{images/plantuml}
+	\caption{PlantUML ábra a rendszer működéséről \cite{plantuml}}
+\end{figure}
+
+\section{Követelmények}
+\subsection{Funkcionális}
 \begin{itemize}
 	\item KRESZ alapú szabályrendszer: Egy olyan háttér algoritmus ami a szituációban szereplő objektumokat kezelni. Az algoritmus áthaladási sorrendet állít fel ami egyben a feladvány helyes megoldását is meghatározza. 
 	\item Interaktív játékostér: A feladatot alkotó szereplők kattinthatóak legyenek és rendelkezzenek animált mozgással. A játék értesítse a felhasználót a hibás lépésről, vagy helyes megoldásról.	
@@ -163,6 +202,11 @@ A nem szükséges telepíteni a játékszoftvert, egyből a kicsomagolás után 
 	\item Pontrendszer: Mind a szabad játéknak, mind a teszt felületnek megfelelő pontrendszer ami a játékos eredményét rögzíti folyamatosan.
 \end{itemize}
 
+\subsection{Nem funkcionális}
+\begin{itemize}
+	\item Egyszerű letisztult kinézetek: Az átláthatóság érdekében kell egy szimpla dizájn ami egyértelműsíti a részvevőket.
+	\item Pálya változatosság: A kereszteződések felépítésébe lehet variációt építeni de ez a működésben nem befolyásolja a progamot.
+\end{itemize}
 \chapter{Játékmenet}
 Az indítás után az első megálló a főmenü. Itt választhatjuk ki, hogy a ,,Play'' gombra nyomva egy szabad játékba kezdünk, vagy a ,,Teszt''-el egy tesztet indítunk, ahol megmérettethetjük saját tudásunkat a gyakoroltak alapján.
 
@@ -173,24 +217,22 @@ Az indítás után az első megálló a főmenü. Itt választhatjuk ki, hogy a 
 \end{figure}
 
 \section{Szabad játék}
-A szabad játék egy végtelen játékmód. Itt az összes elérhető variációból véletlenszerűen kiválasztott feladatokat kapunk amiket a közlekedési szituációban résztvevő autókra kattintva kell megoldanunk. Ha helyes sorrendben választjuk ki az autókat, a feladatot teljesítettük, és léphetünk tovább a következőre.
+A szabad játék egy végtelen játékmód. Itt az összes elérhető variációból véletlenszerűen kiválasztott feladatokat kap a játékos amiket a közlekedési szituációban résztvevő autókra kattintva kell megoldani. A program logikai algoritmusa előre megoldja a feladatot, és minden kattintás után a eldönti, hogy az adott lépés a szabályoknak megfelelő volt e. Ha nem a feladatnak vége és dönthetünk, hogy folytatjuk a játékot vagy visszalépünk a menübe. Amennyiben az elsőnek megjelölt járműre kattint, az elhagyja a kereszteződést és a program újraszámolja a megoldást. Minden helyes lépés után a program új szituációként tekint a felállásra így mindig az az autó következik ami a közlekedési szabályok szerint a következő a sorban.
 
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[height=5cm]{images/fail}
 	\caption{Hibásan megoldott feladat a szabad játékban}
 \end{figure}
-
-Minden sikeresen megoldott feladat után egy pont jár, az ide tartozó pontrendszer a játékos aktuális játéka alatt helyesen megoldott feladványait tartja számon egész addig még a játékot be nem fejezik.
-
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[height=5cm]{images/succes}
 	\caption{Sikeresen megoldott feladat a szabad játékban}
 \end{figure}
- 
+Minden sikeresen megoldott feladat után egy pont jár, az ide tartozó pontrendszer a játékos aktuális játéka alatt helyesen megoldott feladványait tartja számon egész addig még a játékot be nem fejezik. A szabad játék lényege a tanulás, végtelen idő és próbálkozás áll a játékos rendelkezésére, így nincs nyomás mint egy dolgozatnál vagy vizsgánál. A játékosnak van ideje kielemezni az összes szituációt és lépésekben rájönni a megoldásokra. Segít megérteni és alkalmazni a közlekedési szabályokat. Ha felhasználó már magabiztosan tud feladatot megoldani a szabad játék módban akkor érdemes továbblépni a következő játékmódra, hogy tesztelje a megszerzett tudását és gyakorlatát.
 \section{Teszt játék}
-A ,,Teszt'' gombra kattintva egy teszt játék veszi kezdetét. A \textit{KRESZ vizsga} mintájára, adott darab feladványt kell megoldania a játékosnak. Egy teszt feladatai már meghatározottabbak mint a szabad játék szituációi. Van több nehézségi szint. A különböző nehézségű feladatokat arányosan osztja el a rendszer, így a könnyebb és nehezebb szituációkkal egyaránt meg kell tudni birkózni a teszt teljesítéséhez.
+A ,,Teszt'' gombra kattintva egy teszt játék veszi kezdetét. A játék alapja ugyan az viszont itt már a \textit{KRESZ vizsga} \cite{kresz_tabla} mintájára, adott darab feladványt kell megoldania a játékosnak. Egy teszt feladatai már meghatározottabbak mint a szabad játék szituációi. A Teszt indításakor a program arányosan feltölti a feladatok listáját a három nehézségi szinthez (könnyű, közepes, nehéz) tartozó szituációkkal. 
+\newpage
 \begin{itemize}
 	\item Könnyű:
 	\begin{figure}[ht!]
@@ -211,33 +253,32 @@ A ,,Teszt'' gombra kattintva egy teszt játék veszi kezdetét. A \textit{KRESZ 
 		\caption{Nehéz szintű feladat}
 	\end{figure}
 \end{itemize}
-Itt is van pontrendszer, de itt már nem csak a rekordok fenntartása végett. A teszt sikeres teljesítéséhez, az összesen megszerezhető maximális pontszám legalább 90\%-át kell elérnie a játékosnak, de persze mindig lehet törekedni a tökéletes eredményre.
-
+A nehézségi szintek garantálják, hogy a teszt során az összes típusú kereszteződéssel és kevesebb vagy több érkező autóval rendelkező szituációval is találkozik a játékos. A tesztek hosszúsága és elosztása egyenlőre a forráskódban változtatható.A szabad játékhoz hasonlóan minden helyesen megoldott szint után 1 pont jár, itt viszont már más funkciója is van a pontoknak. A teszt sikeres teljesítéséhez 90\% fölött kell teljesíteni, tehát 10 feladatból 9-et kell jól megoldani és minden autót kijuttatni a kereszteződésből.
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[height=5cm]{images/test}
 	\caption{A Teszt játék köztes menüje egy sikeres feladatmegoldás után}
 \end{figure}
-
+A tesztek legfőbb funkciója a gyakorlás. 
 
 \chapter{Saját szoftver}
 
 \section{Fejlesztési idővonal}
 A programom teljes kifejlesztése összesen 2 évet vett igénybe. Ez idő alatt voltak aktívabb és passzívabb időszakok is, volt amikor egy-egy áttörés után rövid időre megnövekedett az elért mérföldkövek száma. A program több alakot is öltött. 
 \subsection{Tanulási időszak}
-Az első félév alatt a program elég csekély formában volt jelen. Ebben az időszakban a fókusz a projekthez használt programozási nyelv megértésén és elsajátításán volt. 
+Az első félév alatt a program elég csekély formában volt jelen. Ebben az időszakban a fókusz a projekthez használt programozási nyelv megértésén és elsajátításán volt. Dokumentációkat és rendszerterv példákat írtam. próbáltam először magam előtt papírra vetni a gondolataimat, hogy aztán azokat összegezve egy kész fejlesztési tervet tudjak összerakni.
 
 Elkészültek a program első tervei amik később támpontot adtak a fejlesztés során. Már itt előre sok elméleti problémára próbáltam megoldást keresni, ötletelni, hogy ha esetleg ezek a problémák később felmerülnének, ne érjen akkora meglepetés.
 \subsection{Szoftver alapok}
-A program első verziója még teljesen a \textit{Visual Studio}-ban, egy ,,WinForms'' felületre készült. Itt jött létre a program alapjául szolgáló algoritmus első, primitív verziója, ami a szituációk előre megadott adatokból volt képes kiszámolni az áthaladás megfelelő sorrendjét.
-
-Ebben az állapotban még csak az alapszabályoknak megfelelően működött, nem tudta még kezelni a nem teljesen lineáris megoldásokat. A kiválasztott paraméterek alapján felállított egy sorrendet és azt adta vissza a kezelőfelületen, nem volt még vizuális megjelenítés, csak számok és szavak.
+A program első verziója még teljesen a \textit{Visual Studio}-ban, egy ,,WinForms'' felületre készült. Itt jött létre a program alapjául szolgáló algoritmus első, primitív verziója, ami a szituációk előre megadott adatokból volt képes kiszámolni az áthaladás megfelelő sorrendjét. Ez az algoritmus ugyan azokat a paramétereket tudta kezelni mint a későbbi változatok. Ebben az állapotban még csak az alapszabályoknak megfelelően működött, nem tudta még kezelni a nem teljesen lineáris megoldásokat. A kiválasztott paraméterek alapján felállított egy sorrendet és azt adta vissza a kezelőfelületen, nem volt még vizuális megjelenítés, csak számok és szavak. Ez a program lett később a feedback rendszer alapja mivel hasonló módon kiíratások alapján működött.
 \subsection{Unity alapok}
 A második félév végén nagy áttörés történt. A program átköltözött a Unity keretrendszerébe. Az eddig kifejlesztett algoritmus megkapta az interaktív felületet az első vizuális megjelenítését. Ez már a GitHubra is felkerült.
 
 A harmadik félévben rájöttem, hogy habár a programíráshoz már megvan a tudásom, a Unity sajátos eszközkészletét még messze nem ismerem eléggé. Tanuló anyagokat kerestem a témában, gyakorló projekteket hoztam létre, és teljesítettem egy Unity specifikus kurzust is, hogy a megfelelő szintre hozzam a tudásomat, mindemellett folyamatosan integráltam az ezalatt tanult módszereket és újdonságokat a programba. 
+
+Először még csak placeholdereket használtam, lapos egyszínű utak és színes kockák járművek helyett. Itt még csak az volt a lényeg, hogy az algoritmus álltal generált megoldást vizualizálni tudja és a számok és szavak halmazát lecseréljem a egy kezdetleges szimulációra. Ennél a verziónál jelent meg először a ,,Játék'' funkció, ahol már működött a kattintás alapú feladatmegoldás és a járművek és utak információinak a közlése a játékos felé. 
 \subsection{Legfrissebb verzió}
-Az utolsó pár hónapban is sok módosításon esett átt a játék. Elkészült egy kezdetleges ,,feedback'' rendszer ami a későbbiekben lényegesen megkönnyítette a hibakeresést és a javítást, hiszen a konzolon folyamatosan megjelentek a ,,real time'' adatai az aktív feladatnak. Később pedig az eredetileg \textit{placeholder}-nek szánt modellek is lecserélésre kerültek.
+Az utolsó pár hónapban is sok módosításon esett átt a játék. Elkészült egy kezdetleges feedback rendszer ami a későbbiekben lényegesen megkönnyítette a hibakeresést és a javítást, hiszen a konzolon folyamatosan megjelentek a ,,real time'' adatai az aktív feladatnak. Később pedig az eredetileg placeholdernek szánt modellek is lecserélésre kerültek, és megkapták az animációkat. \cite{cinemachine} 
 
 Az algoritmus finomodott és immár képessé vált a nem lineáris sorrendű megoldások kezelésére. Ez gyakorlatban annyit jelent, hogy az algoritmus folyamatosan újravizsgálja a szituációt minden lépés után, és megállapítja a következő helyes válaszlehetőségeket. Erről még bővebben később.
 \section{Menü}
@@ -394,14 +435,15 @@ Később már végeztem nagyobb, teljes rendszer szintű manuális teszteket is,
 	\includegraphics[height=5cm]{images/test_fail}
 	\caption{Manuális tesztelés (Teszt játék, nem elég pont)}
 \end{figure}
-\newpage
-A manuális tesztek eredményei:
-\begin{itemize}
-	\item A szabad játék és a teszt játék pontrendszere is megfelelően működik és minden esetben helyesen írja ki az aktuális értéket.
-	\item Az animációk megfelelően és simán futnak végig.
-	\item A megoldó és sorrend felállító algoritmusok megfelelően működnek. Felismerik az esetleges egyenrangúságot a járművek esetében és tudják kezelni.
-	\item A Főmenü és a játékmenü gombjai is megfelelően működnek.
-\end{itemize}
+\subsection{Tesztesetek}
+Manuálisan teszteltem a kattinthatóságot és a kijelzőket. Több alkalommal is végigismételtem a feladatok megoldását, leellenőrizem, hogy a járművek minden kattintásra válaszoljanak, és a jelzők mindig megjelenjenek ha a kurzor a az adott járműn van.
+
+Hasonló tesztsorozaton esett át az animációs rendszer. Itt leginkább a be- és kilépőpontok helyét, Az animációk lépéssebességét valamint, hogy megfelelő sínre csatlakozik e a jármű \textit{DollyCart} komponense.
+
+A pontrendszer manuális tesztelése volt az amivel a legtöbb időt töltöttem. A szabad játék pontrendszere egyszerű ezért a pontnövekedés sikeres megoldás esetén, és stagnálás hibás megoldás esetén alaphelyzetek mellett elég volt pár szélsőséges példát tesztelni. A teszt játék módnál több tesztelési lehetőség van. Vizsgálni kellett, hogy az eredmény elbírálása nagyobb feladatszámnál is pontos e, valamit, hogy a sikeres és sikertelen tesztek minden esetben megfelelnek e a valóságnak.
+
+Tesztelni kellett a feedback rendszert. Ezt it több alkalommal, minden új adat implementálása után újra meg kellett ismételni, hogy minden aktív adat megfelelően megjelenik és érvényesül. A feedback rendszer nyújtotta az alapot a többi manuális teszt ellenőrzőpontjaként.
+
 \section{Egységteszt}
 Az egységtesztek olyan tesztek amiket a programunk adatokkal és változókkal foglalkozó részére írunk. Ezek a tesztek automatizáltak és azt tudjuk velük ellenőrizni, hogy a szoftver teljesíti e a feladatait.
 
@@ -414,49 +456,60 @@ A Unity keretrendszerben ezt egy külön package telepítésével tehetjük meg,
 \addcontentsline{toc}{chapter}{Összegzés}
 A szakdolgozat végére úgy érzem, hogy az elképzelésem megvalósulni látszanak a kész programban. Eleinte úgy gondoltam, hogy sokkal egyszerűbb lesz, viszont ahogy haladtam előre a fejlesztésben, az újabb és újabb akadályok megmutatták mennyi belefektetett energiát is igényel egy ilyen program elkészítése. Rengeteg ötletem lenne még a program fejlesztésére, hogy milyen plusz funkciókat és elemeket tudnék beleépíteni a játékba. Ennek ellenére elégedett vagyok a program mostani állapotával is, hiszen mindig jó ha van hova fejlődni.
 
-Tanulás szempontjából nagyon hasznosnak éreztem ezt a projektet. Rengeteg önfejlesztésen kellett átesnem, hogy elsajátítsam azt a tudást ami egy ilyen program fejlesztéséhez elengedhetetlen. Az 5.~fejezetben leírtakból szeretnék a lehető legtöbbet valamilyen módon a közeljövőben beépíteni a programba, ezáltal tovább fejlesztve és gyakorlással elmélyítve a tudásomat. 
+Tanulás szempontjából nagyon hasznosnak éreztem ezt a projektet. Rengeteg önfejlesztésen kellett átesnem, hogy elsajátítsam azt a tudást ami egy ilyen program fejlesztéséhez elengedhetetlen volt. Sok különböző programozási megoldást ismertem meg, és jobban megértettem az általam használt keretrendszerek működését is. Az 5.~fejezetben leírtakból szeretnék a lehető legtöbbet valamilyen módon a közeljövőben beépíteni a programba, ezáltal tovább fejlesztve és gyakorlással elmélyítve a tudásomat. 
 
-Véleményem szerint ebből a programból nagyon hasznos eszköz válhat azok számára akik vezetni szeretnének tanulni és kell egy kis segítség a szabályok megértésében. A közlekedési szabályok megértése és gyakorlatban való alkalmazása rengeteg figyelmet és gyakorlást igényel, és nagyon fontos, hogy mindenki aki résztvesz a közlekedésben megfelelően fel legyen készítve a szabályok használatára.
+Véleményem szerint ebből a programból nagyon hasznos eszköz válhat azok számára akik vezetni szeretnének tanulni és kell egy kis segítség a szabályok megértésében. Ha nem is váltja ki a KRESZ vizsga komplex rendszerét, legalább egy ahhoz közelítő eszköz lehet ami egy kicsit izgalmasabbá tudja tenni a szabályok tanulását. A közlekedési szabályok megértése és gyakorlatban való alkalmazása rengeteg figyelmet és gyakorlást igényel, és nagyon fontos, hogy mindenki aki résztvesz a közlekedésben megfelelően fel legyen készítve a szabályok használatára.
 \begin{thebibliography}{8}
 \addcontentsline{toc}{chapter}{\bibname}
 \bibitem{id_software}
-\textsc{Wikipédia}: \emph{Id Software}, \url{https://en.wikipedia.org/wiki/Id_Software}, Megtekintve: 2026.04.05.
+\textsc{Wikipédia}: \emph{Id Software}, \url{https://en.wikipedia.org/wiki/Id_Software}, Megtekintve: 2026.04.17.
+\bibitem{unreal}
+\textsc{Oleksandra Sobchyshak}: \emph{Unreal Engine}, \url{https://www.sciencedirect.com/science/article/pii/S0141938225003051}, Megtekintve: 2026.04.17.
 \bibitem{unreal_engine}
-\textsc{Wikipédia}: \emph{Unreal Engine}, \url{https://en.wikipedia.org/wiki/Unreal_Engine}, Megtekintve: 2026.04.05.
+\textsc{Unreal Engine}: \emph{Unreal Engine}, \url{https://www.unrealengine.com/community?lang=en-US}, Megtekintve: 2026.04.17.
 \bibitem{godot_engine}
-\textsc{Wikipédia}: \emph{Godot (game engine)}, \url{https://en.wikipedia.org/wiki/Godot_(game_engine)}, Megtekintve: 2026.04.05.
-\bibitem{unity_engine}
-\textsc{Wikipédia}: \emph{Unity (game engine)}, \url{https://en.wikipedia.org/wiki/Unity_(game_engine)}, Megtekintve: 2026.04.05.
+\textsc{Godot Engine}: \emph{Godot (game engine)}, \url{https://docs.godotengine.org/en/4.4/getting_started/introduction/first_look_at_the_editor.html}, Megtekintve: 2026.04.17.
 \bibitem{unity_technologies}
-\textsc{Wikipédia}: \emph{Unity Technologies}: \url{https://en.wikipedia.org/wiki/Unity_Technologies}, Megtekintve: 2026.04.06.
+\textsc{Unity Technologies}: \emph{Unity Technologies}: \url{https://docs.unity3d.com/Manual/index.html}, Megtekintve: 2026.04.18.
 \bibitem{unity_components}
-\textsc{Unity Documentation}: \emph{Introduction to components}: \url{https://docs.unity3d.com/Manual/Components.html}, Megtekintve: 2026.04.08.
+\textsc{Unity Documentation}: \emph{Introduction to components}: \url{https://docs.unity3d.com/Manual/Components.html}, Megtekintve: 2026.04.18.
 \bibitem{unity_monobehaviour}
-\textsc{Unity Documentation}: \emph{MonoBehaviour}: \url{https://docs.unity3d.com/ScriptReference/MonoBehaviour.html}, Megtekintve: 2026.04.08.
+\textsc{Unity Documentation}: \emph{MonoBehaviour}: \url{https://docs.unity3d.com/ScriptReference/MonoBehaviour.html}, Megtekintve: 2026.04.18.
+\bibitem{navmesh}
+\textsc{Unity Documentation}: \emph{NavMesh}: \url{https://docs.unity3d.com/ScriptReference/AI.NavMesh.html}, Megtekintve: 2026.04.22.
+\bibitem{cinemachine}
+\textsc{Unity Documentation}: \emph{Cinemachine}: \url{https://docs.unity3d.com/Packages/com.unity.cinemachine@3.1/manual/index.html}, Megtekintve: 2026.04.22.
 \bibitem{kresz}
 \textsc{Wikipédia}: \emph{KRESZ}: \url{https://hu.wikipedia.org/wiki/KRESZ}, Megtekintve: 2026.04.18.
+\bibitem{kresz_vizsga}
+\textsc{KRESZ Vizsga}: \emph{KRESZ}: \url{https://vizsgakozpont.hu/kozut/jarmuvezeto-kepzes}, Megtekintve: 2026.04.22.
+\bibitem{kresz_tabla}
+\textsc{Jogtár}: \emph{KRESZ táblák}: \url{https://net.jogtar.hu/jogszabaly?docid=97500001.kpm}, Megtekintve: 2026.04.22.
+
 \chapter*{Ábrajegyzék}
 \addcontentsline{toc}{chapter}{Ábrajegyzék}
 \bibitem{harompontos}
-\textsc{KRESZ vizsga}: \emph{Három pontos feladat}, \url{https://szuperjogsi.hu/images/slide/3/Bogi110.jpg}, Letöltve: 2026.04.20.
+\textsc{KRESZ vizsga}: \emph{Három pontos feladat}, \url{https://szuperjogsi.hu/images/slide/3/Bogi110.jpg}, 2026.04.20.
 \bibitem{kresz_img}
-\textsc{KRESZ Táblák}: \emph{Közlekedési táblák}, \url{https://vezess2.p3k.hu/app/uploads/2007/02/2123_19519_1000x700.jpg.jpg}, Letöltve: 2026.04.20.
+\textsc{KRESZ Táblák}: \emph{Közlekedési táblák}, \url{https://vezess2.p3k.hu/app/uploads/2007/02/2123_19519_1000x700.jpg.jpg}, 2026.04.20.
 \bibitem{villamos}
-\textsc{KRESZ vizsga}: \emph{Három pontos feladat villamossal}, \url{https://www.beol.hu/helyi-eletstilus/2025/07/kresz-teszt-villamos-elsobbseg}, Letöltve: 2026.04.20.
+\textsc{KRESZ vizsga}: \emph{Három pontos feladat villamossal}, \url{https://www.beol.hu/helyi-eletstilus/2025/07/kresz-teszt-villamos-elsobbseg}, 2026.04.20.
 \bibitem{mento}
-\textsc{KRESZ vizsga}: \emph{Három pontos feladat mentőautóval}, \url{https://www.feol.hu/helyi-kozelet/2024/12/kresz-teszt-mentoauto}, Letöltve: 2026.04.20.
+\textsc{KRESZ vizsga}: \emph{Három pontos feladat mentőautóval}, \url{https://www.feol.hu/helyi-kozelet/2024/12/kresz-teszt-mentoauto}, 2026.04.20.
 \bibitem{mento2}
-\textsc{KRESZ vizsga}: \emph{KRESZ feladat mentőautóval}, \url{https://www.szon.hu/helyi-kozelet/2025/07/megelozheto-a-mento-a-legtobben-bebukjak-ezt-a-kerdest#google_vignette}, Letöltve: 2026.04.20.
+\textsc{KRESZ vizsga}: \emph{KRESZ feladat mentőautóval}, \url{https://www.szon.hu/helyi-kozelet/2025/07/megelozheto-a-mento-a-legtobben-bebukjak-ezt-a-kerdest#google_vignette}, 2026.04.20.
 \bibitem{korforgalom}
-\textsc{KRESZ vizsga}: \emph{Három pontos feladat körforgalommal}, \url{https://www.beol.hu/helyi-eletstilus/2026/03/kresz-teszt-korforgalom}, Letöltve: 2026.04.20.
+\textsc{KRESZ vizsga}: \emph{Három pontos feladat körforgalommal}, \url{https://www.beol.hu/helyi-eletstilus/2026/03/kresz-teszt-korforgalom}, 2026.04.20.
 \bibitem{doom}
-\textsc{DOOM}: \emph{DOOM képernyőkép}, \url{https://upload.wikimedia.org/wikipedia/en/thumb/d/de/Doom_ingame_1.png/250px-Doom_ingame_1.png}, Letöltve: 2026.04.20.
+\textsc{DOOM}: \emph{DOOM képernyőkép}, \url{https://upload.wikimedia.org/wikipedia/en/thumb/d/de/Doom_ingame_1.png/250px-Doom_ingame_1.png}, 2026.04.20.
 \bibitem{unreal_img}
-\textsc{Unreal Engine}: \emph{Unreal Engine kezelőfelület}, \url{https://cdn2.unrealengine.com/ue5-modeling-mode-tech-blog-sandsculpting-2844x1559-1885809c9ebd.JPG}, Letöltve: 2026.04.20.
+\textsc{Unreal Engine}: \emph{Unreal Engine kezelőfelület}, \url{https://cdn2.unrealengine.com/ue5-modeling-mode-tech-blog-sandsculpting-2844x1559-1885809c9ebd.JPG}, 2026.04.20.
 \bibitem{godot_img}
-\textsc{Godot Engine}: \emph{Godot Engine kezelőfelület}, \url{https://upload.wikimedia.org/wikipedia/commons/e/e3/Godot3.4.png}, Letöltve: 2026.04.20.
+\textsc{Godot Engine}: \emph{Godot Engine kezelőfelület}, \url{https://upload.wikimedia.org/wikipedia/commons/e/e3/Godot3.4.png}, 2026.04.20.
 \bibitem{unity_img}
-\textsc{Unity Engine}: \emph{Unity kezelőfelület}, \url{https://unity.com/releases/2019-3/editor-tools}, Letöltve: 2026.04.20.
+\textsc{Unity Engine}: \emph{Unity kezelőfelület}, \url{https://unity.com/releases/2019-3/editor-tools}, 2026.04.20.
+\bibitem{plantuml}
+\textsc{PlantUML}: \emph{PlantUML ábra}, \url{https://plantuml.com}, 2026.04.20.
 \end{thebibliography}
 
 % Aláírt, szkennelt nyilatkozat beillesztése a szakdolgozat végére
